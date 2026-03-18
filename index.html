@@ -1,19 +1,660 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>교육역량 시스템</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-homepage</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <button type="button" class="brand-button" data-nav="홈">
+            <span class="brand-mark">VS</span>
+            <span class="brand-title">교육역량 시스템</span>
+          </button>
+
+          <nav class="top-nav" aria-label="주요 메뉴">
+            <span class="top-nav-indicator" aria-hidden="true"></span>
+            <button type="button" class="top-tab is-active" data-nav="홈">홈</button>
+            <button type="button" class="top-tab" data-nav="교육신청">교육신청</button>
+            <button type="button" class="top-tab" data-nav="결과보고">결과보고</button>
+            <button type="button" class="top-tab" data-nav="교육현황">교육현황</button>
+          </nav>
+        </div>
+      </header>
+
+      <div class="page-transition is-visible" id="page-transition">
+        <main class="page-section is-active" data-view="홈">
+          <div class="container page-body">
+            <section class="home-grid">
+              <div class="stack-column">
+                <section class="card profile-card home-reveal">
+                  <div class="section-heading">
+                    <span class="icon-box" data-icon="user"></span>
+                    <h2>개인 프로필</h2>
+                  </div>
+
+                  <div class="profile-grid">
+                    <article class="info-pill profile-name-pill">
+                      <p class="eyebrow">이름</p>
+                      <p class="pill-value">김다훈</p>
+                    </article>
+                    <article class="info-pill emphasis-pill profile-credit-pill">
+                      <p class="eyebrow">필수학점</p>
+                      <p class="pill-value emphasis-value">40점</p>
+                    </article>
+                    <article class="info-pill profile-department-pill">
+                      <p class="eyebrow">소속</p>
+                      <p class="pill-value">정보시스템 Cell</p>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="card notice-card home-reveal">
+                  <div class="section-heading">
+                    <span class="icon-box" data-icon="bell"></span>
+                    <h2>공지사항</h2>
+                  </div>
+
+                  <div class="notice-list">
+                    <a href="./" class="notice-item">
+                      <span class="notice-title">2026년 교육 운영 기준 안내</span>
+                      <span class="notice-date">2026.01.08</span>
+                    </a>
+                    <a href="./" class="notice-item">
+                      <span class="notice-title">역량 개발 계획 제출 일정 안내</span>
+                      <span class="notice-date">2026.01.12</span>
+                    </a>
+                    <a href="./" class="notice-item">
+                      <span class="notice-title">교육비 집행 관련 유의사항</span>
+                      <span class="notice-date">2026.01.18</span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+
+              <section class="card budget-card home-reveal">
+                <div class="section-heading">
+                  <span class="icon-box" data-icon="card"></span>
+                  <h2>지원 현황</h2>
+                </div>
+
+                <div class="budget-summary">
+                  <article class="summary-box summary-box-neutral">
+                    <p class="eyebrow">전체 금액</p>
+                    <p class="summary-value">1,500,000원</p>
+                  </article>
+                  <article class="summary-box summary-box-blue">
+                    <p class="eyebrow text-blue">사용 금액</p>
+                    <p class="summary-value">100,000원</p>
+                  </article>
+                  <article class="summary-box summary-box-green">
+                    <p class="eyebrow text-green">문화비 잔여 금액</p>
+                    <p class="summary-value">200,000원</p>
+                  </article>
+                </div>
+
+                <div class="budget-table">
+                  <div class="budget-head">
+                    <div>구분</div>
+                    <div class="align-right">전체 금액</div>
+                    <div class="align-right">문화 활동비</div>
+                  </div>
+
+                  <div class="budget-rows">
+                    <article class="budget-row">
+                      <div class="budget-label-wrap">
+                        <span class="row-accent row-accent-dark"></span>
+                        <p class="budget-label">전체 금액</p>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">1,500,000 원</p>
+                        <div class="progress-track">
+                          <div class="progress-fill fill-dark" data-width="100"></div>
+                        </div>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">300,000 원</p>
+                        <div class="progress-track">
+                          <div class="progress-fill fill-dark" data-width="100"></div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="budget-row">
+                      <div class="budget-label-wrap">
+                        <span class="row-accent row-accent-blue"></span>
+                        <p class="budget-label">사용 금액</p>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">100,000 원</p>
+                        <div class="progress-track">
+                          <div class="progress-fill fill-blue" data-width="6.7"></div>
+                        </div>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">100,000 원</p>
+                        <div class="progress-track">
+                          <div class="progress-fill fill-blue" data-width="33.3"></div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="budget-row">
+                      <div class="budget-label-wrap">
+                        <span class="row-accent row-accent-green"></span>
+                        <p class="budget-label">잔여 금액</p>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">1,400,000 원</p>
+                        <div class="progress-track progress-track-right">
+                          <div class="progress-fill fill-green progress-align-right" data-width="93.3"></div>
+                        </div>
+                      </div>
+                      <div class="budget-metric">
+                        <p class="budget-value">200,000 원</p>
+                        <div class="progress-track progress-track-right">
+                          <div class="progress-fill fill-green progress-align-right" data-width="66.7"></div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <section class="dual-grid">
+              <article class="card status-card home-reveal" data-status-card="교육문화 활동">
+                <div class="section-heading">
+                  <span class="icon-box" data-icon="book"></span>
+                  <h3>교육문화 활동</h3>
+                </div>
+
+                <div class="status-tabs" role="tablist" aria-label="교육문화 활동 상태">
+                  <button type="button" class="status-tab" data-group="activity" data-status="신청">신청</button>
+                  <button type="button" class="status-tab is-active" data-group="activity" data-status="결과보고">결과보고</button>
+                  <button type="button" class="status-tab" data-group="activity" data-status="완료">완료</button>
+                </div>
+
+                <div class="status-list" data-list="activity"></div>
+              </article>
+
+              <article class="card status-card home-reveal" data-status-card="사외교육 활동">
+                <div class="section-heading">
+                  <span class="icon-box" data-icon="cap"></span>
+                  <h3>사외교육 활동</h3>
+                </div>
+
+                <div class="status-tabs" role="tablist" aria-label="사외교육 활동 상태">
+                  <button type="button" class="status-tab" data-group="external" data-status="신청">신청</button>
+                  <button type="button" class="status-tab is-active" data-group="external" data-status="결과보고">결과보고</button>
+                  <button type="button" class="status-tab" data-group="external" data-status="완료">완료</button>
+                </div>
+
+                <div class="status-list" data-list="external"></div>
+              </article>
+            </section>
+          </div>
+        </main>
+
+        <main class="page-section" data-view="교육신청">
+          <div class="container page-body">
+            <section class="content-grid">
+              <aside class="side-menu-card">
+                <div class="side-user-box">
+                  <p class="eyebrow">사용자</p>
+                  <p class="side-user-name">김다훈 님</p>
+                </div>
+
+                <div class="side-menu-list">
+                  <button type="button" class="side-menu-button is-active" data-menu-group="application" data-menu="교육활동 신청">
+                    <span>교육활동 신청</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="application" data-menu="문화활동 신청">
+                    <span>문화활동 신청</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="application" data-menu="사외교육 신청">
+                    <span>사외교육 신청</span>
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </aside>
+
+              <div class="content-stack">
+                <div class="application-list-view" data-application-view="list">
+                  <section class="card filter-card">
+                    <div class="filter-head">
+                      <h2 data-filter-title="application">교육활동 신청</h2>
+                    </div>
+
+                    <div class="filter-layout">
+                      <div class="filter-inputs">
+                        <label class="field">
+                          <input type="text" placeholder="과정명 입력" data-course-input="application" />
+                        </label>
+
+                        <div class="custom-select year-select" data-custom-select>
+                          <button
+                            type="button"
+                            class="custom-select-trigger"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                          >
+                            <span class="custom-select-value">2026년</span>
+                          </button>
+                          <div class="custom-select-menu" role="listbox">
+                            <button type="button" class="custom-select-option is-selected" data-value="2026">2026년</button>
+                            <button type="button" class="custom-select-option" data-value="2025">2025년</button>
+                            <button type="button" class="custom-select-option" data-value="2024">2024년</button>
+                          </div>
+                          <input type="hidden" value="2026" data-year-input="application" />
+                        </div>
+                      </div>
+
+                      <div class="filter-actions" data-application-filter-actions></div>
+                    </div>
+                  </section>
+
+                  <section class="table-card">
+                    <div class="table-scroll">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>적용년도</th>
+                            <th>과정명</th>
+                            <th>학습방법</th>
+                            <th>교육기간</th>
+                            <th>교육시간</th>
+                            <th>교육장소</th>
+                            <th>결재상태</th>
+                          </tr>
+                        </thead>
+                        <tbody data-table-body="application"></tbody>
+                      </table>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="application-detail-view is-hidden" data-application-view="detail">
+                  <section class="application-detail-header card">
+                    <div class="detail-context">
+                      <p class="detail-breadcrumb" data-application-detail-breadcrumb></p>
+                      <h2 data-application-detail-title></h2>
+                      <p class="detail-description" data-application-detail-description></p>
+                    </div>
+
+                    <div class="detail-header-actions">
+                      <button type="button" class="ghost-button" data-application-detail-action="back">
+                        목록
+                      </button>
+                      <button type="button" class="primary-button" data-application-detail-action="save">
+                        저장
+                      </button>
+                    </div>
+                  </section>
+
+                  <section class="detail-summary-grid" data-application-budget-summary></section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>기본 정보</h3>
+                      <p>신청에 필요한 기본 정보를 입력해주세요.</p>
+                    </div>
+                    <div class="detail-form-grid" data-application-detail-fields="basic"></div>
+                  </section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>비용 정보</h3>
+                      <p>예산과 예상 비용을 함께 확인할 수 있습니다.</p>
+                    </div>
+                    <div class="detail-form-grid" data-application-detail-fields="cost"></div>
+                  </section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>추가 입력</h3>
+                      <p>검토에 필요한 참고 사항을 함께 남겨주세요.</p>
+                    </div>
+                    <div class="detail-form-grid" data-application-detail-fields="extra"></div>
+                  </section>
+
+                  <section class="card notice-panel">
+                    <div class="section-heading notice-panel-heading">
+                      <span class="icon-box" data-icon="file"></span>
+                      <h3>안내사항</h3>
+                    </div>
+                    <div class="notice-panel-list" data-application-notices></div>
+                  </section>
+
+                  <div class="detail-bottom-actions">
+                    <button type="button" class="ghost-button" data-application-detail-action="cancel">
+                      목록
+                    </button>
+                    <button type="button" class="primary-button" data-application-detail-action="save">
+                      저장
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <main class="page-section" data-view="결과보고">
+          <div class="container page-body">
+            <section class="content-grid">
+              <aside class="side-menu-card">
+                <div class="side-user-box">
+                  <p class="eyebrow">사용자</p>
+                  <p class="side-user-name">김다훈 님</p>
+                </div>
+
+                <div class="side-menu-list">
+                  <button type="button" class="side-menu-button is-active" data-menu-group="report" data-menu="교육활동 결과보고">
+                    <span>교육활동 결과보고</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="report" data-menu="문화활동 결과보고">
+                    <span>문화활동 결과보고</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="report" data-menu="사외교육 결과보고">
+                    <span>사외교육 결과보고</span>
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </aside>
+
+              <div class="content-stack">
+                <div class="report-list-view" data-report-view="list">
+                  <section class="card filter-card">
+                    <div class="filter-head">
+                      <h2 data-filter-title="report">교육활동 결과보고</h2>
+                    </div>
+
+                    <div class="filter-layout">
+                      <div class="filter-inputs">
+                        <label class="field">
+                          <input type="text" placeholder="과정명 입력" data-course-input="report" />
+                        </label>
+
+                        <div class="custom-select year-select" data-custom-select>
+                          <button
+                            type="button"
+                            class="custom-select-trigger"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                          >
+                            <span class="custom-select-value">2026년</span>
+                          </button>
+                          <div class="custom-select-menu" role="listbox">
+                            <button type="button" class="custom-select-option is-selected" data-value="2026">2026년</button>
+                            <button type="button" class="custom-select-option" data-value="2025">2025년</button>
+                            <button type="button" class="custom-select-option" data-value="2024">2024년</button>
+                          </div>
+                          <input type="hidden" value="2026" data-year-input="report" />
+                        </div>
+                      </div>
+
+                      <div class="filter-actions">
+                        <button type="button" class="ghost-button" data-search-button="report">
+                          <span class="icon-box small" data-icon="search"></span>
+                          검색
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="table-card">
+                    <div class="table-scroll table-scroll-fixed">
+                      <table class="report-table">
+                        <thead>
+                          <tr>
+                            <th class="col-year">적용년도</th>
+                            <th class="col-course">과정명</th>
+                            <th class="col-period">교육기간</th>
+                            <th class="col-hours">교육시간</th>
+                            <th class="col-place">교육장소</th>
+                            <th class="col-approval">결재상태</th>
+                            <th class="col-completion">이수 상태</th>
+                          </tr>
+                        </thead>
+                        <tbody data-table-body="report"></tbody>
+                      </table>
+                    </div>
+                  </section>
+
+                  <div class="alert-note">
+                    <span class="icon-box small text-rose" data-icon="file"></span>
+                    <span>2026년 결과보고는 2026년 1월 8일부터 가능합니다.</span>
+                  </div>
+                </div>
+
+                <div class="report-detail-view is-hidden" data-report-view="detail">
+                  <section class="report-detail-header card">
+                    <div class="detail-context">
+                      <p class="detail-breadcrumb" data-report-detail-breadcrumb></p>
+                      <h2>결과보고</h2>
+                      <p class="detail-description" data-report-detail-description></p>
+                    </div>
+
+                    <div class="detail-header-actions">
+                      <button type="button" class="danger-button" data-report-detail-action="destructive-cancel">신청 취소</button>
+                      <button type="button" class="ghost-button with-divider" data-report-detail-action="cancel">목록</button>
+                      <button type="button" class="primary-button" data-report-detail-action="save">저장</button>
+                    </div>
+                  </section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>기본 정보</h3>
+                      <p>결과보고 기본 정보를 확인하고 내용을 작성해주세요.</p>
+                    </div>
+                    <div class="detail-form-grid" data-report-detail-fields="basic"></div>
+                  </section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>교육 정보</h3>
+                      <p>교육기간, 시간, 만족도 평가를 입력합니다.</p>
+                    </div>
+                    <div class="detail-form-grid" data-report-detail-fields="education"></div>
+                  </section>
+
+                  <section class="detail-summary-grid" data-report-cost-summary></section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>계좌정보</h3>
+                      <p>지급을 위한 계좌 정보를 입력해주세요.</p>
+                    </div>
+                    <div class="detail-form-grid is-account" data-report-detail-fields="account"></div>
+                  </section>
+
+                  <section class="card detail-section-card">
+                    <div class="detail-section-head">
+                      <h3>첨부 파일</h3>
+                      <p>결과보고 확인에 필요한 파일을 첨부해주세요.</p>
+                    </div>
+                    <div class="report-upload-panel">
+                      <label class="report-upload-dropzone">
+                        <input type="file" multiple data-report-upload-input />
+                        <span class="icon-box" data-icon="file"></span>
+                        <strong>파일을 드래그하거나 클릭해서 업로드</strong>
+                        <span>docx, hwp, pdf / 최대 10MB</span>
+                      </label>
+                      <div class="report-upload-list" data-report-upload-list></div>
+                      <p class="field-help">필수 증빙 파일은 결과보고서, 영수증, 티켓 등 정책에 맞는 자료만 첨부해주세요.</p>
+                    </div>
+                  </section>
+
+                  <section class="card notice-panel">
+                    <div class="section-heading notice-panel-heading">
+                      <span class="icon-box" data-icon="bell"></span>
+                      <h3>안내사항</h3>
+                    </div>
+                    <div class="notice-panel-list" data-report-notices></div>
+                  </section>
+
+                  <div class="detail-bottom-actions">
+                    <button type="button" class="ghost-button" data-report-detail-action="back">목록</button>
+                    <button type="button" class="primary-button" data-report-detail-action="save">저장</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <main class="page-section" data-view="교육현황">
+          <div class="container page-body">
+            <section class="content-grid">
+              <aside class="side-menu-card">
+                <div class="side-user-box">
+                  <p class="eyebrow">사용자</p>
+                  <p class="side-user-name">김다훈 님</p>
+                </div>
+
+                <div class="side-menu-list">
+                  <button type="button" class="side-menu-button is-active" data-menu-group="educationStatus" data-menu="교육활동 현황">
+                    <span>교육활동 현황</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="educationStatus" data-menu="문화활동 현황">
+                    <span>문화활동 현황</span>
+                    <span class="chevron">›</span>
+                  </button>
+                  <button type="button" class="side-menu-button" data-menu-group="educationStatus" data-menu="사외교육 현황">
+                    <span>사외교육 현황</span>
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </aside>
+
+              <div class="content-stack">
+                <section class="card filter-card">
+                  <div class="filter-head">
+                    <h2 data-filter-title="educationStatus">교육활동 현황</h2>
+                  </div>
+
+                  <div class="education-status-filter-layout">
+                    <div class="education-status-filter-inputs">
+                      <label class="field">
+                        <input
+                          type="text"
+                          placeholder="과정명 입력"
+                          data-education-filter="keyword"
+                        />
+                      </label>
+
+                      <div class="custom-select year-select" data-custom-select>
+                        <button
+                          type="button"
+                          class="custom-select-trigger"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                        >
+                          <span class="custom-select-value">2026년</span>
+                        </button>
+                        <div class="custom-select-menu" role="listbox">
+                          <button type="button" class="custom-select-option is-selected" data-value="2026">2026년</button>
+                          <button type="button" class="custom-select-option" data-value="2025">2025년</button>
+                          <button type="button" class="custom-select-option" data-value="2024">2024년</button>
+                        </div>
+                        <input type="hidden" value="2026" data-education-filter="year" />
+                      </div>
+
+                      <div class="custom-select status-select" data-custom-select>
+                        <button
+                          type="button"
+                          class="custom-select-trigger"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                        >
+                          <span class="custom-select-value">이수 상태 전체</span>
+                        </button>
+                        <div class="custom-select-menu" role="listbox">
+                          <button type="button" class="custom-select-option is-selected" data-value="전체">이수 상태 전체</button>
+                          <button type="button" class="custom-select-option" data-value="이수">이수</button>
+                          <button type="button" class="custom-select-option" data-value="진행중">진행중</button>
+                          <button type="button" class="custom-select-option" data-value="미이수">미이수</button>
+                        </div>
+                        <input type="hidden" value="전체" data-education-filter="completionStatus" />
+                      </div>
+                    </div>
+
+                    <div class="filter-actions">
+                      <button
+                        type="button"
+                        class="ghost-button"
+                        data-search-button="educationStatus"
+                      >
+                        <span class="icon-box small" data-icon="search"></span>
+                        검색
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="table-card">
+                  <div class="table-scroll table-scroll-fixed">
+                    <table class="education-status-table">
+                      <thead>
+                        <tr>
+                          <th class="col-year">적용년도</th>
+                          <th class="col-course-lg">과정명</th>
+                          <th class="col-period">교육기간</th>
+                          <th class="col-hours">교육시간</th>
+                          <th class="col-credit">학점</th>
+                          <th class="col-completion">교육 이수 상태</th>
+                        </tr>
+                      </thead>
+                      <tbody data-table-body="education-status"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="confirm-modal is-hidden" data-confirm-modal aria-hidden="true">
+      <div class="confirm-modal-backdrop" data-confirm-close></div>
+      <div
+        class="confirm-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirm-modal-title"
+        aria-describedby="confirm-modal-description"
+      >
+        <div class="confirm-modal-head">
+          <h3 id="confirm-modal-title">신청 취소</h3>
+        </div>
+        <p class="confirm-modal-description" id="confirm-modal-description">
+          신청을 취소하시겠습니까?<br />
+          취소된 신청은 복구할 수 없습니다.
+        </p>
+        <div class="confirm-modal-actions">
+          <button type="button" class="ghost-button" data-confirm-close>취소</button>
+          <button type="button" class="danger-button" data-confirm-submit>확인</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
