@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="favicon-highlight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(23 19) rotate(50) scale(20 18)">
+      <stop stop-color="rgba(255,255,255,0.24)" />
+      <stop offset="1" stop-color="rgba(255,255,255,0)" />
+    </radialGradient>
+    <linearGradient id="favicon-bg" x1="14" y1="10" x2="50" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" />
+      <stop offset="1" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="favicon-mark" x1="20" y1="18" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC" />
+      <stop offset="1" stop-color="#E2E8F0" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#favicon-bg)" />
+  <circle cx="32" cy="32" r="28" fill="url(#favicon-highlight)" />
+  <path
+    d="M17.8 19.5h10l6.2 15.3 5.9-15.3h10.3L39.4 46.8H28.8L17.8 19.5Z"
+    fill="url(#favicon-mark)"
+    opacity="0.98"
+  />
+  <path
+    d="M25.4 22.3h4.1l4.4 11.5 4.3-11.5h4.1l-6.8 17.4h-5.2l-6.9-17.4Z"
+    fill="#F8FAFC"
+    opacity="0.94"
+  />
+  <path
+    d="M21.5 45h21"
+    stroke="#BFDBFE"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    opacity="0.42"
+  />
+</svg>
