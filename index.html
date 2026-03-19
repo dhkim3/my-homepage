@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>교육역량 시스템</title>
+    <script>
+      (function () {
+        var baseHref = './'
+
+        if (window.location.protocol !== 'file:') {
+          var segments = window.location.pathname.split('/').filter(Boolean)
+          baseHref = segments.length ? '../'.repeat(segments.length) : './'
+        }
+
+        document.write('<base href="' + baseHref + '">')
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="./assets/favicon-brand.svg?v=2" />
     <link rel="shortcut icon" href="./assets/favicon-brand.svg?v=2" />
     <link rel="apple-touch-icon" href="./assets/favicon-brand.svg?v=2" />
@@ -324,18 +336,8 @@
 
                   <section class="table-card">
                     <div class="table-scroll">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>적용년도</th>
-                            <th>과정명</th>
-                            <th>학습방법</th>
-                            <th>교육기간</th>
-                            <th>교육시간</th>
-                            <th>교육장소</th>
-                            <th>결재상태</th>
-                          </tr>
-                        </thead>
+                      <table class="application-table" data-application-table>
+                        <thead data-application-table-head></thead>
                         <tbody data-table-body="application"></tbody>
                       </table>
                     </div>
@@ -358,31 +360,7 @@
                     </div>
                   </section>
 
-                  <section class="card detail-section-card">
-                    <div class="detail-section-head">
-                      <h3>기본 정보</h3>
-                      <p>신청에 필요한 기본 정보를 입력해주세요.</p>
-                    </div>
-                    <div class="detail-form-grid" data-application-detail-fields="basic"></div>
-                  </section>
-
-                  <section class="card detail-section-card">
-                    <div class="detail-section-head">
-                      <h3>비용 정보</h3>
-                      <p>예산과 예상 비용을 함께 확인할 수 있습니다.</p>
-                    </div>
-                    <div class="detail-form-grid" data-application-detail-fields="cost"></div>
-                  </section>
-
-                  <section class="detail-summary-grid" data-application-budget-summary></section>
-
-                  <section class="card detail-section-card">
-                    <div class="detail-section-head">
-                      <h3>추가 입력</h3>
-                      <p>검토에 필요한 참고 사항을 함께 남겨주세요.</p>
-                    </div>
-                    <div class="detail-form-grid" data-application-detail-fields="extra"></div>
-                  </section>
+                  <div class="application-detail-sections" data-application-detail-sections></div>
 
                   <section class="card notice-panel">
                     <div class="section-heading notice-panel-heading">
@@ -473,8 +451,8 @@
 
                   <section class="table-card">
                     <div class="table-scroll table-scroll-fixed">
-                      <table class="report-table">
-                        <thead>
+                      <table class="report-table" data-report-table>
+                        <thead data-report-table-head>
                           <tr>
                             <th class="col-year">적용년도</th>
                             <th class="col-course">과정명</th>
@@ -523,7 +501,7 @@
                   <section class="card detail-section-card">
                     <div class="detail-section-head">
                       <h3>교육 정보</h3>
-                      <p>교육기간, 시간, 만족도 평가를 입력합니다.</p>
+                      <p data-report-education-description>교육기간, 시간, 만족도 평가를 입력합니다.</p>
                     </div>
                     <div class="detail-form-grid" data-report-detail-fields="education"></div>
                   </section>
@@ -550,19 +528,10 @@
 
                   <section class="card detail-section-card">
                     <div class="detail-section-head">
-                      <h3>첨부 파일</h3>
-                      <p>결과보고 확인에 필요한 파일을 첨부해주세요.</p>
+                      <h3 data-report-upload-title>첨부 파일</h3>
+                      <p data-report-upload-description>결과보고 확인에 필요한 파일을 첨부해주세요.</p>
                     </div>
-                    <div class="report-upload-panel">
-                      <label class="report-upload-dropzone">
-                        <input type="file" multiple data-report-upload-input />
-                        <span class="icon-box" data-icon="file"></span>
-                        <strong>파일을 드래그하거나 클릭해서 업로드</strong>
-                        <span>docx, hwp, pdf / 최대 10MB</span>
-                      </label>
-                      <div class="report-upload-list" data-report-upload-list></div>
-                      <p class="field-help">필수 증빙 파일은 결과보고서, 영수증, 티켓 등 정책에 맞는 자료만 첨부해주세요.</p>
-                    </div>
+                    <div class="report-upload-panel" data-report-upload-panel></div>
                   </section>
 
                   <section class="card notice-panel">
@@ -683,7 +652,8 @@
                           <th class="col-period">교육기간</th>
                           <th class="col-hours">교육시간</th>
                           <th class="col-credit">학점</th>
-                          <th class="col-completion">교육 이수 상태</th>
+                          <th class="col-completion">이수 상태</th>
+                          <th class="col-paid align-right">지급 금액</th>
                         </tr>
                       </thead>
                       <tbody data-table-body="education-status"></tbody>
@@ -763,6 +733,34 @@
         <div class="confirm-modal-actions">
           <button type="button" class="ghost-button" data-confirm-close>취소</button>
           <button type="button" class="danger-button" data-confirm-submit>확인</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice-modal is-hidden" data-notice-modal aria-hidden="true">
+      <div class="notice-modal-backdrop" data-notice-close></div>
+      <div
+        class="notice-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="notice-modal-title"
+        aria-describedby="notice-modal-description"
+      >
+        <div class="notice-modal-head">
+          <span class="notice-modal-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" class="notice-modal-icon-svg">
+              <circle cx="10" cy="10" r="10" fill="currentColor" opacity="0.12" />
+              <path
+                d="M10 5.6a.85.85 0 0 1 .85.85v4.12a.85.85 0 1 1-1.7 0V6.45A.85.85 0 0 1 10 5.6Zm0 8.2a1.02 1.02 0 1 1 0-2.04 1.02 1.02 0 0 1 0 2.04Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <h3 id="notice-modal-title">안내</h3>
+        </div>
+        <p class="notice-modal-description" id="notice-modal-description"></p>
+        <div class="notice-modal-actions">
+          <button type="button" class="primary-button" data-notice-close>확인</button>
         </div>
       </div>
     </div>

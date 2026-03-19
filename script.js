@@ -26,7 +26,28 @@ const homeStatusData = {
       { title: 'UX 리서치 방법론 교육 신청', meta: '교육활동' },
     ],
     결과보고: [
-      { title: '데이터 분석 세미나 결과보고', meta: '교육활동', dday: 'D-0' },
+      {
+        id: 'report-edu-1',
+        type: 'education',
+        title: '데이터 분석 세미나 결과보고',
+        meta: '교육활동',
+        year: '2026',
+        period: '2026.03.05 - 2026.03.05',
+        hours: '4시간',
+        place: '비상교육 러닝센터',
+        dday: 'D-0',
+      },
+      {
+        id: 'report-culture-1',
+        type: 'culture',
+        title: '선과 치히로의 행방불명 오리지널 투어 결과보고',
+        meta: '문화활동',
+        year: '2026',
+        period: '2026.03.05 - 2026.03.05',
+        hours: '0시간',
+        place: '예술의전당 오페라하우스',
+        dday: 'D-5',
+      },
     ],
     완료: [
       { title: '비즈니스 영어 과정 수료', meta: '교육활동' },
@@ -40,7 +61,28 @@ const homeStatusData = {
       { title: 'UX 리서치 방법론 교육 신청', meta: '사외교육' },
     ],
     결과보고: [
-      { title: '서비스 기획 교육 결과보고', meta: '사외교육', dday: 'D-3' },
+      {
+        id: 'report-external-1',
+        type: 'external',
+        title: '서비스 기획 교육 결과보고',
+        meta: '사외교육',
+        year: '2026',
+        period: '2026.04.10 - 2026.04.10',
+        hours: '4시간',
+        place: '코엑스 컨퍼런스룸',
+        dday: 'D-3',
+      },
+      {
+        id: 'report-external-2',
+        type: 'external',
+        title: 'AI Product Summit 2026 결과보고',
+        meta: '사외교육',
+        year: '2026',
+        period: '2026.05.14 - 2026.05.14',
+        hours: '6시간',
+        place: '세텍 컨벤션홀',
+        dday: 'D-9',
+      },
     ],
     완료: [
       { title: '비즈니스 영어 과정 수료', meta: '사외교육' },
@@ -54,36 +96,159 @@ const applicationRowsByMenu = {
   '교육활동 신청': [
     {
       id: 'apply-edu-1',
+      type: 'education',
       year: '2026',
       courseName: '문제해결 워크숍',
       learningMethod: '집합교육',
       period: '2026.03.12 - 2026.03.13',
       hours: '8시간',
       place: '비상교육 러닝센터',
-      approvalStatus: '결재대기',
+      approvalStatus: '결재완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          place: '비상교육 러닝센터',
+          title: '문제해결 워크숍',
+          purpose:
+            '실무 프로젝트에서 필요한 문제정의와 해결 구조화 역량을 강화하고, 팀 내 공통 업무 언어를 정리하기 위한 신청입니다.',
+          periodStart: '2026-03-12',
+          periodEnd: '2026-03-13',
+          hours: '8시간',
+        },
+        cost: {
+          expectedCost: '180000',
+        },
+      },
+    },
+    {
+      id: 'apply-edu-2',
+      type: 'education',
+      year: '2026',
+      courseName: '데이터 분석 기초 과정',
+      learningMethod: '온라인 교육',
+      period: '2026.04.01 - 2026.04.30',
+      hours: '12시간',
+      place: '비상 러닝허브',
+      approvalStatus: '결재완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          place: '비상 러닝허브',
+          title: '데이터 분석 기초 과정',
+          purpose:
+            '서비스 데이터 해석 역량을 높이고 기본적인 분석 리포트 작성 역량을 강화하기 위한 신청입니다.',
+          periodStart: '2026-04-01',
+          periodEnd: '2026-04-30',
+          hours: '12시간',
+        },
+        cost: {
+          expectedCost: '120000',
+        },
+      },
     },
   ],
-  '문화활동 신청': [],
+  '문화활동 신청': [
+    {
+      id: 'apply-culture-1',
+      type: 'culture',
+      year: '2026',
+      courseName: '선과 치히로의 행방불명 오리지널 투어',
+      learningMethod: '공연/전시',
+      period: '2026.03.20 - 2026.03.20',
+      place: '예술의전당 오페라하우스',
+      approvalStatus: '결재완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          title: '선과 치히로의 행방불명 오리지널 투어',
+          periodStart: '2026-03-20',
+          periodEnd: '2026-03-20',
+          place: '예술의전당 오페라하우스',
+          purpose:
+            '콘텐츠 기획 시 참고할 수 있는 연출과 공간 경험을 직접 체험하고, 스토리텔링 관점의 인사이트를 정리하기 위한 신청입니다.',
+        },
+        cost: {
+          expectedCost: '95000',
+        },
+      },
+    },
+    {
+      id: 'apply-culture-2',
+      type: 'culture',
+      year: '2026',
+      courseName: '경주 문화유산 아트 투어',
+      learningMethod: '체험형 활동',
+      period: '2026.05.02 - 2026.05.02',
+      place: '경주 예술의 숲',
+      approvalStatus: '결재완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          title: '경주 문화유산 아트 투어',
+          periodStart: '2026-05-02',
+          periodEnd: '2026-05-02',
+          place: '경주 예술의 숲',
+          purpose:
+            '전통 문화유산과 전시 연출 방식을 직접 체험하며 콘텐츠 스토리텔링에 활용할 인사이트를 정리하기 위한 신청입니다.',
+        },
+        cost: {
+          expectedCost: '70000',
+        },
+      },
+    },
+  ],
   '사외교육 신청': [
     {
       id: 'apply-external-1',
+      type: 'external',
       year: '2026',
       courseName: 'B2B SaaS 실무 전략 세미나',
       learningMethod: '외부 컨퍼런스',
       period: '2026.04.10 - 2026.04.10',
       hours: '4시간',
       place: '코엑스 컨퍼런스룸',
-      approvalStatus: '신청가능',
+      approvalStatus: '결재완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          title: 'B2B SaaS 실무 전략 세미나',
+          periodStart: '2026-04-10',
+          periodEnd: '2026-04-10',
+          place: '코엑스 컨퍼런스룸',
+          hours: '4시간',
+          purpose:
+            '제품 운영 관점에서 필요한 SaaS 비즈니스 사례와 실무 전략을 학습하고 서비스 개선 인사이트로 연결하기 위한 신청입니다.',
+        },
+        cost: {
+          expectedCost: '200000',
+        },
+      },
     },
     {
       id: 'apply-external-2',
+      type: 'external',
       year: '2026',
       courseName: '비즈니스 영어 프레젠테이션',
       learningMethod: '어학 과정',
       period: '2026.04.22 - 2026.05.20',
       hours: '12시간',
       place: '러닝허브 강남캠퍼스',
-      approvalStatus: '신청가능',
+      approvalStatus: '저장완료',
+      detailData: {
+        basic: {
+          year: '2026년',
+          title: '비즈니스 영어 프레젠테이션',
+          periodStart: '2026-04-22',
+          periodEnd: '2026-05-20',
+          place: '러닝허브 강남캠퍼스',
+          hours: '12시간',
+          purpose:
+            '대외 발표와 글로벌 커뮤니케이션에 필요한 실전형 프레젠테이션 역량을 강화하기 위한 신청입니다.',
+        },
+        cost: {
+          expectedCost: '160000',
+        },
+      },
     },
   ],
 }
@@ -93,6 +258,10 @@ const applicationDetailConfigs = {
     title: '교육활동 신청',
     description: '직무 역량 강화를 위한 교육활동 신청 정보를 입력하고 예산 정보를 함께 확인합니다.',
     breadcrumb: '교육신청 / 교육활동 신청 / 상세 작성',
+    sections: [
+      { key: 'basic', title: '기본 정보', description: '신청에 필요한 기본 정보를 입력해주세요.' },
+      { key: 'cost', title: '비용 정보', description: '예산과 예상 비용을 함께 확인할 수 있습니다.' },
+    ],
     budgetSummary: [
       { label: '기지출 총액', value: '100,000원', caption: '승인 완료 기준 반영' },
       { label: '신청 가능 금액', value: '200,000원', caption: '현재 신청 가능 금액' },
@@ -119,10 +288,10 @@ const applicationDetailConfigs = {
           full: true,
         },
         {
-          label: '활동 목적',
+          label: '내용',
           type: 'textarea',
-          value:
-            '실무 프로젝트에서 필요한 문제정의와 해결 구조화 역량을 강화하고, 팀 내 공통 업무 언어를 정리하기 위한 신청입니다.',
+          value: '',
+          placeholder: '내용을 입력해주세요.',
           full: true,
         },
         {
@@ -148,15 +317,6 @@ const applicationDetailConfigs = {
           secondaryType: 'readonly',
           secondaryValue: '원',
           help: '실제 지급 금액은 결과보고 승인 후 정산 기준으로 반영됩니다.',
-        },
-      ],
-      extra: [
-        {
-          label: '비고',
-          type: 'textarea',
-          value:
-            '문제해결 관련 내부 프로젝트와 연계해 적용 예정이며, 교육 종료 후 결과보고에 실무 적용 사례를 함께 작성하겠습니다.',
-          full: true,
         },
       ],
     },
@@ -199,6 +359,10 @@ const applicationDetailConfigs = {
     title: '문화활동 신청',
     description: '문화 경험을 통한 인사이트 확장 목적의 신청 정보를 입력하고 문화비 예산을 확인합니다.',
     breadcrumb: '교육신청 / 문화활동 신청 / 상세 작성',
+    sections: [
+      { key: 'basic', title: '기본 정보', description: '신청에 필요한 기본 정보를 입력해주세요.' },
+      { key: 'cost', title: '비용 정보', description: '예산과 예상 비용을 함께 확인할 수 있습니다.' },
+    ],
     budgetSummary: [
       { label: '기지출 총액', value: '100,000원', caption: '승인 완료 기준 반영' },
       { label: '신청 가능 금액', value: '100,000원', caption: '현재 신청 가능 금액' },
@@ -226,10 +390,10 @@ const applicationDetailConfigs = {
           full: true,
         },
         {
-          label: '활동 목적',
+          label: '내용',
           type: 'textarea',
-          value:
-            '콘텐츠 기획 시 참고할 수 있는 연출과 공간 경험을 직접 체험하고, 스토리텔링 관점의 인사이트를 정리하기 위한 신청입니다.',
+          value: '',
+          placeholder: '내용을 입력해주세요.',
           full: true,
         },
         {
@@ -254,15 +418,6 @@ const applicationDetailConfigs = {
           secondaryType: 'readonly',
           secondaryValue: '원',
           help: '문화활동비는 티켓 및 공식 프로그램 비용만 반영됩니다.',
-        },
-      ],
-      extra: [
-        {
-          label: '비고',
-          type: 'textarea',
-          value:
-            '동행 인원 없이 개인 관람으로 진행하며, 티켓 영수증과 프로그램북 사진을 결과보고에 첨부할 예정입니다.',
-          full: true,
         },
       ],
     },
@@ -304,6 +459,10 @@ const applicationDetailConfigs = {
     title: '사외교육 신청',
     description: '외부 교육기관 또는 컨퍼런스 신청 정보를 입력하고 승인 전 필요한 예산 및 일정 정보를 정리합니다.',
     breadcrumb: '교육신청 / 사외교육 신청 / 상세 작성',
+    sections: [
+      { key: 'basic', title: '기본 정보', description: '신청에 필요한 기본 정보를 입력해주세요.' },
+      { key: 'cost', title: '비용 정보', description: '예산과 예상 비용을 함께 확인할 수 있습니다.' },
+    ],
     budgetSummary: [
       { label: '기지출 총액', value: '100,000원', caption: '내부 교육 사용 포함' },
       { label: '신청 가능 금액', value: '200,000원', caption: '현재 신청 가능 금액' },
@@ -330,10 +489,10 @@ const applicationDetailConfigs = {
           full: true,
         },
         {
-          label: '활동 목적',
+          label: '내용',
           type: 'textarea',
-          value:
-            '제품 운영 관점에서 필요한 SaaS 비즈니스 사례와 실무 전략을 학습하고 서비스 개선 인사이트로 연결하기 위한 신청입니다.',
+          value: '',
+          placeholder: '내용을 입력해주세요.',
           full: true,
         },
         {
@@ -359,28 +518,6 @@ const applicationDetailConfigs = {
           secondaryType: 'readonly',
           secondaryValue: '원',
           help: '등록비 외 교통비/숙박비는 별도 승인 정책을 따릅니다.',
-        },
-        {
-          label: '참가 기대 효과',
-          type: 'textarea',
-          value:
-            '세션별 핵심 내용을 요약하고, 제품 운영팀에 공유 가능한 실무 액션 아이템으로 정리할 예정입니다.',
-          full: true,
-        },
-      ],
-      extra: [
-        {
-          label: '비고',
-          type: 'textarea',
-          value:
-            '조기 등록 할인 기간 내 신청 예정이며, 세미나 종료 후 발표자료가 제공되면 결과보고에 첨부하겠습니다.',
-          full: true,
-        },
-        {
-          label: '참고 링크',
-          type: 'text',
-          value: 'https://example.com/seminar',
-          full: true,
         },
       ],
     },
@@ -426,30 +563,56 @@ const reportRowsByMenu = {
   '교육활동 결과보고': [
     {
       id: 'report-edu-1',
+      type: 'education',
       year: '2026',
       courseName: '[교육] 문제해결 세미나',
+      reportTitle: '데이터 분석 세미나 결과보고',
       period: '2026.03.05 - 2026.03.05',
       hours: '4시간',
       place: '비상교육 러닝센터',
-      approvalStatus: '교육신청상태',
+      approvalStatus: '저장완료',
       completionStatus: '진행중',
-      contentType: '교육비',
     },
   ],
   '문화활동 결과보고': [
     {
       id: 'report-culture-1',
+      type: 'culture',
       year: '2026',
       courseName: '[문화] 선과 치히로의 행방불명 오리지널 투어',
+      reportTitle: '선과 치히로의 행방불명 오리지널 투어 결과보고',
       period: '2026.03.05 - 2026.03.05',
-      hours: '0',
       place: '예술의전당 오페라하우스',
-      approvalStatus: '교육신청상태',
+      approvalStatus: '저장완료',
       completionStatus: '진행중',
-      contentType: '문화비',
     },
   ],
-  '사외교육 결과보고': [],
+  '사외교육 결과보고': [
+    {
+      id: 'report-external-1',
+      type: 'external',
+      year: '2026',
+      courseName: '[사외교육] 서비스 기획 컨퍼런스',
+      reportTitle: '서비스 기획 교육 결과보고',
+      period: '2026.04.10 - 2026.04.10',
+      hours: '4시간',
+      place: '코엑스 컨퍼런스룸',
+      approvalStatus: '저장완료',
+      completionStatus: '진행중',
+    },
+    {
+      id: 'report-external-2',
+      type: 'external',
+      year: '2026',
+      courseName: '[사외교육] AI Product Summit 2026',
+      reportTitle: 'AI Product Summit 2026 결과보고',
+      period: '2026.05.14 - 2026.05.14',
+      hours: '6시간',
+      place: '세텍 컨벤션홀',
+      approvalStatus: '저장완료',
+      completionStatus: '진행중',
+    },
+  ],
 }
 
 const reportDetailConfigs = {
@@ -457,6 +620,7 @@ const reportDetailConfigs = {
     title: '결과보고',
     breadcrumb: '결과보고 / 교육활동 결과보고 / 상세 작성',
     noticeLead: '결과보고 전 유의사항',
+    educationDescription: '교육기간, 시간, 만족도 평가를 입력합니다.',
     notices: [
       {
         title: '첨부 파일 안내',
@@ -499,10 +663,12 @@ const reportDetailConfigs = {
       },
     ],
     rowToDetail(row) {
+      const dateRange = parsePeriodToDateRange(row.period, '2026-03-05', '2026-03-05')
+
       return {
         basic: [
           { label: '적용년도', type: 'readonly', value: row.year },
-          { label: '내용 구분', type: 'readonly', value: row.contentType || '교육비' },
+          { label: '유형', type: 'readonly', value: getReportTypeLabel(row.type) },
           { label: '제목', type: 'text', value: row.courseName, full: true },
           {
             label: '내용',
@@ -512,7 +678,7 @@ const reportDetailConfigs = {
           },
         ],
         education: [
-          { label: '교육기간', type: 'daterange', start: '2026-03-05', end: '2026-03-05' },
+          { label: '교육기간', type: 'daterange', start: dateRange.start, end: dateRange.end },
           { label: '교육시간', type: 'text', value: row.hours, placeholder: '예: 4시간' },
           {
             key: 'educationPlace',
@@ -549,8 +715,8 @@ const reportDetailConfigs = {
           { key: 'accountNumber', label: '계좌번호', type: 'text', value: '123-456-789012', placeholder: '숫자와 하이픈 입력' },
         ],
         uploads: [
-          { id: 'report-file-1', name: '결과보고서_v1.pdf', size: '2.4MB' },
-          { id: 'report-file-2', name: '교육커리큘럼.pdf', size: '480KB' },
+          { id: 'report-file-1', slot: 'report', name: '결과보고서_v1.pdf', size: '2.4MB' },
+          { id: 'report-file-2', slot: 'curriculum', name: '교육커리큘럼.pdf', size: '480KB' },
         ],
       }
     },
@@ -559,6 +725,7 @@ const reportDetailConfigs = {
     title: '결과보고',
     breadcrumb: '결과보고 / 문화활동 결과보고 / 상세 작성',
     noticeLead: '결과보고 전 유의사항',
+    educationDescription: '교육기간, 만족도 평가를 입력합니다.',
     notices: [
       {
         title: '첨부 파일 안내',
@@ -593,10 +760,12 @@ const reportDetailConfigs = {
       },
     ],
     rowToDetail(row) {
+      const dateRange = parsePeriodToDateRange(row.period, '2026-03-05', '2026-03-05')
+
       return {
         basic: [
           { label: '적용년도', type: 'readonly', value: row.year },
-          { label: '내용 구분', type: 'readonly', value: row.contentType || '문화비' },
+          { label: '유형', type: 'readonly', value: getReportTypeLabel(row.type) },
           { label: '제목', type: 'text', value: row.courseName, full: true },
           {
             label: '내용',
@@ -606,7 +775,7 @@ const reportDetailConfigs = {
           },
         ],
         education: [
-          { label: '교육기간', type: 'daterange', start: '2026-03-05', end: '2026-03-05' },
+          { label: '교육기간', type: 'daterange', start: dateRange.start, end: dateRange.end },
           {
             key: 'educationPlace',
             label: '교육장소',
@@ -641,7 +810,7 @@ const reportDetailConfigs = {
           { key: 'bank', label: '은행', type: 'text', value: '신한은행', placeholder: '은행명을 입력해주세요' },
           { key: 'accountNumber', label: '계좌번호', type: 'text', value: '110-245-889900', placeholder: '숫자와 하이픈 입력' },
         ],
-        uploads: [{ id: 'report-file-3', name: '티켓_영수증.jpg', size: '1.1MB' }],
+        uploads: [{ id: 'report-file-3', slot: 'report', name: '문화활동_결과보고서.pdf', size: '1.1MB' }],
       }
     },
   },
@@ -649,6 +818,7 @@ const reportDetailConfigs = {
     title: '결과보고',
     breadcrumb: '결과보고 / 사외교육 결과보고 / 상세 작성',
     noticeLead: '결과보고 전 유의사항',
+    educationDescription: '교육기간, 시간, 만족도 평가를 입력합니다.',
     notices: [
       {
         title: '첨부 파일 안내',
@@ -677,10 +847,12 @@ const reportDetailConfigs = {
       },
     ],
     rowToDetail(row) {
+      const dateRange = parsePeriodToDateRange(row.period, '2026-04-10', '2026-04-10')
+
       return {
         basic: [
           { label: '적용년도', type: 'readonly', value: row.year },
-          { label: '내용 구분', type: 'readonly', value: row.contentType || '교육비' },
+          { label: '유형', type: 'readonly', value: getReportTypeLabel(row.type) },
           { label: '제목', type: 'text', value: row.courseName, full: true },
           {
             label: '내용',
@@ -690,8 +862,16 @@ const reportDetailConfigs = {
           },
         ],
         education: [
-          { label: '교육기간', type: 'daterange', start: '2026-04-10', end: '2026-04-10' },
+          { label: '교육기간', type: 'daterange', start: dateRange.start, end: dateRange.end },
           { label: '교육시간', type: 'text', value: row.hours || '4시간', placeholder: '예: 4시간' },
+          {
+            key: 'educationPlace',
+            label: '교육장소',
+            type: 'text',
+            value: row.place || '',
+            placeholder: '교육장소를 입력하세요',
+            required: true,
+          },
           {
             label: '교육평가',
             type: 'radio',
@@ -718,7 +898,10 @@ const reportDetailConfigs = {
           { key: 'bank', label: '은행', type: 'text', value: '우리은행', placeholder: '은행명을 입력해주세요' },
           { key: 'accountNumber', label: '계좌번호', type: 'text', value: '1002-333-445566', placeholder: '숫자와 하이픈 입력' },
         ],
-        uploads: [{ id: 'report-file-4', name: '세미나_등록확인서.pdf', size: '620KB' }],
+        uploads: [
+          { id: 'report-file-4', slot: 'report', name: '사외교육_결과보고서.pdf', size: '620KB' },
+          { id: 'report-file-5', slot: 'curriculum', name: '사외교육_커리큘럼.pdf', size: '480KB' },
+        ],
       }
     },
   },
@@ -733,6 +916,7 @@ const educationStatusRowsByMenu = {
       hours: '8시간',
       credit: '8점',
       completionStatus: '이수',
+      paidAmount: '100000',
     },
   ],
   '문화활동 현황': [
@@ -743,6 +927,7 @@ const educationStatusRowsByMenu = {
       hours: '0시간',
       credit: '0점',
       completionStatus: '진행중',
+      paidAmount: '',
     },
   ],
   '사외교육 현황': [
@@ -753,6 +938,7 @@ const educationStatusRowsByMenu = {
       hours: '4시간',
       credit: '4점',
       completionStatus: '미이수',
+      approvedAmount: '200000',
     },
   ],
 }
@@ -907,6 +1093,21 @@ const adminDeadlineEmployeeData = [
 
 const defaultAdminBaseMenu = '필수 학점/비용 설정'
 const DEV_FORCE_ADMIN_ROLE = true
+const applicationTypeToMenuMap = {
+  education: '교육활동 신청',
+  culture: '문화활동 신청',
+  external: '사외교육 신청',
+}
+const reportTypeToMenuMap = {
+  education: '교육활동 결과보고',
+  culture: '문화활동 결과보고',
+  external: '사외교육 결과보고',
+}
+const reportTypeLabelMap = {
+  education: '교육활동',
+  culture: '문화활동',
+  external: '사외교육',
+}
 
 const viewPathMap = {
   홈: '/',
@@ -939,6 +1140,7 @@ const state = {
     isDetailOpen: false,
     selectedRowId: null,
     detailDraft: null,
+    uploadError: '',
     courseName: '',
     year: '2026',
     appliedFilters: { courseName: '', year: '2026' },
@@ -989,6 +1191,7 @@ const state = {
 }
 
 let confirmCancelHandler = null
+let noticeModalTrigger = null
 
 const elements = {
   brandButton: document.querySelector('.brand-button'),
@@ -1156,8 +1359,65 @@ function updateBrowserPath(pathname, { replace = false } = {}) {
   }
 }
 
+function getReportTypeByMenu(menu = state.report.selectedMenu) {
+  return (
+    Object.entries(reportTypeToMenuMap).find(([, mappedMenu]) => mappedMenu === menu)?.[0] || ''
+  )
+}
+
+function getReportTypeLabel(type = '') {
+  return reportTypeLabelMap[type] || type || '-'
+}
+
+function getReportDetailPath(type, id) {
+  if (!type || !id) {
+    return viewPathMap.결과보고
+  }
+
+  return `/report/${type}/${id}`
+}
+
+function getApplicationDetailPath(type, id) {
+  if (!type || !id) {
+    return viewPathMap.교육신청
+  }
+
+  return `/application/${type}/${id}`
+}
+
 function resolveRouteState(pathname = window.location.pathname) {
   const normalizedPath = normalizePathname(pathname)
+  const applicationDetailMatch = normalizedPath.match(/^\/application\/([^/]+)\/([^/]+)$/)
+
+  if (applicationDetailMatch) {
+    const [, applicationType, applicationId] = applicationDetailMatch
+
+    if (applicationTypeToMenuMap[applicationType]) {
+      return {
+        view: '교육신청',
+        adminMenu: defaultAdminBaseMenu,
+        applicationType,
+        applicationId,
+        canonicalPath: getApplicationDetailPath(applicationType, applicationId),
+      }
+    }
+  }
+
+  const reportDetailMatch = normalizedPath.match(/^\/report\/([^/]+)\/([^/]+)$/)
+
+  if (reportDetailMatch) {
+    const [, reportType, reportId] = reportDetailMatch
+
+    if (reportTypeToMenuMap[reportType]) {
+      return {
+        view: '결과보고',
+        adminMenu: defaultAdminBaseMenu,
+        reportType,
+        reportId,
+        canonicalPath: getReportDetailPath(reportType, reportId),
+      }
+    }
+  }
 
   if (normalizedPath === '/admin/base' || normalizedPath === '/admin/base/credit-cost') {
     return {
@@ -1193,10 +1453,40 @@ function applyRouteState(routeState, { replaceHistory = false } = {}) {
     return
   }
 
+  if (routeState.view === '교육신청' && routeState.applicationType && routeState.applicationId) {
+    const didOpenApplicationDetail = navigateToApplicationDetail(
+      routeState.applicationType,
+      routeState.applicationId,
+      { replaceHistory },
+    )
+
+    if (didOpenApplicationDetail) {
+      return
+    }
+
+    routeState.canonicalPath = viewPathMap.교육신청
+  }
+
+  if (routeState.view === '결과보고' && routeState.reportType && routeState.reportId) {
+    const didOpenReportDetail = navigateToReportDetail(routeState.reportType, routeState.reportId, {
+      replaceHistory,
+    })
+
+    if (didOpenReportDetail) {
+      return
+    }
+
+    routeState.canonicalPath = viewPathMap.결과보고
+  }
+
   state.currentView = routeState.view
 
   if (routeState.view === '기초정보') {
     state.adminBase.selectedMenu = routeState.adminMenu || defaultAdminBaseMenu
+  } else if (routeState.view === '결과보고') {
+    resetReportView()
+  } else if (routeState.view === '교육신청') {
+    resetApplicationView()
   }
 
   if (replaceHistory && routeState.canonicalPath) {
@@ -1251,6 +1541,47 @@ function getTodayDateValue() {
 function getVisibleMonthValue(value = '') {
   const parsedDate = parseDateValue(value) || new Date()
   return `${parsedDate.getFullYear()}-${String(parsedDate.getMonth() + 1).padStart(2, '0')}`
+}
+
+function formatTablePeriodValue(period = '') {
+  const normalized = String(period || '').trim()
+
+  if (!normalized) {
+    return '-'
+  }
+
+  const formatSingleDate = (value) => {
+    const cleaned = String(value || '').trim()
+    const match = cleaned.match(/(\d{4})[.\-/](\d{2})[.\-/](\d{2})/)
+
+    if (!match) {
+      return cleaned
+    }
+
+    return `${match[2]}.${match[3]}`
+  }
+
+  if (normalized.includes(' - ')) {
+    const formattedParts = normalized
+      .split(' - ')
+      .map((part) => formatSingleDate(part))
+
+    return formattedParts[0] === formattedParts[1]
+      ? formattedParts[0]
+      : formattedParts.join(' - ')
+  }
+
+  if (normalized.includes(' ~ ')) {
+    const formattedParts = normalized
+      .split(' ~ ')
+      .map((part) => formatSingleDate(part))
+
+    return formattedParts[0] === formattedParts[1]
+      ? formattedParts[0]
+      : formattedParts.join(' ~ ')
+  }
+
+  return formatSingleDate(normalized)
 }
 
 function parseVisibleMonthValue(monthValue = '') {
@@ -1522,7 +1853,7 @@ function renderAdminBaseCreditCostPage() {
 
   contentNode.innerHTML = `
     <section class="card admin-filter-card">
-      <div class="admin-filter-grid admin-filter-grid-compact">
+      <div class="admin-filter-grid admin-filter-grid-shared">
         <div class="admin-filter-field">
           <label class="detail-field-label">년도</label>
           ${createAdminSelectMarkup({
@@ -1532,7 +1863,7 @@ function renderAdminBaseCreditCostPage() {
           })}
         </div>
         <div class="admin-filter-field">
-          <label class="detail-field-label">부서</label>
+          <label class="detail-field-label">부서 선택</label>
           ${createAdminSelectMarkup({
             value: state.adminBase.department,
             options: adminBaseFilterOptions.department,
@@ -1563,6 +1894,7 @@ function renderAdminBaseCreditCostPage() {
           <label class="detail-field-label">검색</label>
           <button type="button" class="ghost-button admin-search-button" data-admin-base-action="search" aria-label="검색">
             <span class="icon-box small" data-icon="search"></span>
+            검색
           </button>
         </div>
       </div>
@@ -1969,55 +2301,52 @@ function renderAdminDeadlinePage() {
 
   contentNode.innerHTML = `
     <section class="card admin-filter-card admin-filter-card-deadline">
-      <div class="admin-filter-toolbar">
-        <div class="admin-deadline-filter-grid">
-          <div class="admin-filter-field">
-            <label class="detail-field-label">부서 선택</label>
-            ${createAdminSelectMarkup({
-              value: filters.department,
-              options: adminBaseFilterOptions.department,
-              inputKey: 'deadlineDepartment',
-            })}
-          </div>
-          <div class="admin-filter-field">
-            <label class="detail-field-label">년도</label>
-            ${createAdminSelectMarkup({
-              value: `${filters.year}년`,
-              options: adminBaseYearOptions.map((year) => `${year}년`),
-              inputKey: 'deadlineYear',
-            })}
-          </div>
-          <div class="admin-filter-field">
-            <label class="detail-field-label">이름</label>
-            <label class="field">
-              <input
-                type="text"
-                placeholder="이름 입력"
-                value="${filters.employeeName}"
-                data-admin-deadline-input="employeeName"
-              />
-            </label>
-          </div>
-          <div class="admin-filter-field">
-            <label class="detail-field-label">사번</label>
-            <label class="field">
-              <input
-                type="text"
-                placeholder="사번 입력"
-                value="${filters.employeeNumber}"
-                data-admin-deadline-input="employeeNumber"
-              />
-            </label>
-          </div>
-          <div class="admin-filter-field admin-filter-submit">
-            <label class="detail-field-label">검색</label>
-            <button type="button" class="ghost-button" data-admin-deadline-action="search">
-              <span class="icon-box small" data-icon="search"></span>
-              검색
-            </button>
-          </div>
+      <div class="admin-filter-grid admin-filter-grid-shared">
+        <div class="admin-filter-field">
+          <label class="detail-field-label">년도</label>
+          ${createAdminSelectMarkup({
+            value: `${filters.year}년`,
+            options: adminBaseYearOptions.map((year) => `${year}년`),
+            inputKey: 'deadlineYear',
+          })}
         </div>
-
+        <div class="admin-filter-field">
+          <label class="detail-field-label">부서 선택</label>
+          ${createAdminSelectMarkup({
+            value: filters.department,
+            options: adminBaseFilterOptions.department,
+            inputKey: 'deadlineDepartment',
+          })}
+        </div>
+        <div class="admin-filter-field">
+          <label class="detail-field-label">이름</label>
+          <label class="field">
+            <input
+              type="text"
+              placeholder="이름 입력"
+              value="${filters.employeeName}"
+              data-admin-deadline-input="employeeName"
+            />
+          </label>
+        </div>
+        <div class="admin-filter-field">
+          <label class="detail-field-label">사번</label>
+          <label class="field">
+            <input
+              type="text"
+              placeholder="사번 입력"
+              value="${filters.employeeNumber}"
+              data-admin-deadline-input="employeeNumber"
+            />
+          </label>
+        </div>
+        <div class="admin-filter-field admin-filter-submit">
+          <label class="detail-field-label">검색</label>
+          <button type="button" class="ghost-button admin-search-button" data-admin-deadline-action="search">
+            <span class="icon-box small" data-icon="search"></span>
+            검색
+          </button>
+        </div>
       </div>
     </section>
 
@@ -2669,9 +2998,14 @@ function bindDatePickerEvents() {
 function createStatusItemMarkup(item, showDday) {
   const ddayBadgeClass = showDday && item.dday ? getDdayBadgeClass(item.dday) : ''
   const ddayBadgeLabel = showDday && item.dday ? getDdayBadgeLabel(item.dday) : ''
+  const clickAttrs =
+    showDday && item.type && item.id
+      ? ` role="button" tabindex="0" data-home-report-item="${item.id}" data-home-report-type="${item.type}"`
+      : ''
+  const clickableClass = showDday && item.type && item.id ? ' is-clickable' : ''
 
   return `
-    <article class="status-item">
+    <article class="status-item${clickableClass}"${clickAttrs}>
       <div class="status-item-head">
         <p class="status-item-title">${item.title}</p>
         ${showDday && item.dday ? `<span class="dday-badge ${ddayBadgeClass}">${ddayBadgeLabel}</span>` : ''}
@@ -3133,6 +3467,43 @@ function initializeStatusCards() {
     })
   })
 
+  document.querySelectorAll('.status-list').forEach((list) => {
+    if (list.dataset.bound === 'true') {
+      return
+    }
+
+    list.dataset.bound = 'true'
+
+    const openHomeReportItem = (target) => {
+      const item = target.closest('[data-home-report-item]')
+
+      if (!item) {
+        return
+      }
+
+      navigateToReportDetail(item.dataset.homeReportType, item.dataset.homeReportItem)
+    }
+
+    list.addEventListener('click', (event) => {
+      openHomeReportItem(event.target)
+    })
+
+    list.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return
+      }
+
+      const item = event.target.closest('[data-home-report-item]')
+
+      if (!item) {
+        return
+      }
+
+      event.preventDefault()
+      navigateToReportDetail(item.dataset.homeReportType, item.dataset.homeReportItem)
+    })
+  })
+
   resetHomeStatusCards()
 }
 
@@ -3151,10 +3522,51 @@ function renderEmptyRow(colspan, year, menu) {
   `
 }
 
+function getApprovalStatusLabel(value = '') {
+  const normalized = String(value || '-').trim() || '-'
+
+  if (normalized === '저장완료') {
+    return '저장'
+  }
+
+  return normalized
+}
+
+function renderApprovalStatusBadge(value = '') {
+  const rawValue = String(value || '-').trim() || '-'
+  const label = getApprovalStatusLabel(rawValue)
+  const variant =
+    rawValue === '결재완료'
+      ? 'status--approved'
+      : rawValue === '저장완료'
+        ? 'status--draft'
+        : 'status--neutral'
+
+  return `<span class="table-status-badge ${variant}">${label}</span>`
+}
+
+function renderApprovalStatusCell(value = '') {
+  return `<span class="table-status-cell">${renderApprovalStatusBadge(value)}</span>`
+}
+
+function getReportTableColumns(menu = state.report.selectedMenu) {
+  const defaultColumns = [
+    { key: 'year', label: '적용년도', className: 'col-year' },
+    { key: 'courseName', label: '과정명', className: 'col-course' },
+    { key: 'period', label: '교육기간', className: 'col-period' },
+    { key: 'hours', label: '교육시간', className: 'col-hours' },
+    { key: 'place', label: '교육장소', className: 'col-place' },
+    { key: 'completionStatus', label: '이수 상태', className: 'col-completion' },
+    { key: 'approvalStatus', label: '결재 상태', className: 'col-approval' },
+  ]
+
+  return defaultColumns
+}
+
 function renderEducationStatusEmptyRow() {
   return `
     <tr>
-      <td colspan="6" class="empty-cell">
+      <td colspan="7" class="empty-cell">
         <div class="empty-state education-empty-state">
           <div class="empty-icon">
             <span class="icon-box large" data-icon="folder"></span>
@@ -3166,10 +3578,36 @@ function renderEducationStatusEmptyRow() {
   `
 }
 
+function getApplicationTableColumns(menu = state.application.selectedMenu) {
+  const defaultColumns = [
+    { key: 'year', label: '적용년도' },
+    { key: 'courseName', label: '과정명' },
+    { key: 'learningMethod', label: '학습방법' },
+    { key: 'period', label: '교육기간' },
+    { key: 'hours', label: '교육시간' },
+    { key: 'place', label: '교육장소' },
+    { key: 'approvalStatus', label: '결재 상태' },
+  ]
+
+  return defaultColumns
+}
+
 function renderApplicationTable() {
   const target = document.querySelector('[data-table-body="application"]')
+  const table = document.querySelector('[data-application-table]')
+  const head = document.querySelector('[data-application-table-head]')
   if (!target) {
     return
+  }
+
+  const columns = getApplicationTableColumns(state.application.selectedMenu)
+
+  if (head) {
+    head.innerHTML = `
+      <tr>
+        ${columns.map((column) => `<th>${column.label}</th>`).join('')}
+      </tr>
+    `
   }
 
   const { selectedMenu, appliedFilters } = state.application
@@ -3182,7 +3620,7 @@ function renderApplicationTable() {
   })
 
   if (!rows.length) {
-    target.innerHTML = renderEmptyRow(7, appliedFilters.year, selectedMenu)
+    target.innerHTML = renderEmptyRow(columns.length, appliedFilters.year, selectedMenu)
     renderIcons()
     return
   }
@@ -3190,14 +3628,28 @@ function renderApplicationTable() {
   target.innerHTML = rows
     .map(
       (row) => `
-        <tr class="${selectedMenu === '사외교육 신청' ? 'application-row application-row-clickable' : ''}"${selectedMenu === '사외교육 신청' ? ` data-application-row="${row.id}"` : ''}>
-          <td>${row.year}</td>
-          <td>${row.courseName}</td>
-          <td>${row.learningMethod}</td>
-          <td>${row.period}</td>
-          <td>${row.hours}</td>
-          <td>${row.place}</td>
-          <td>${row.approvalStatus}</td>
+        <tr class="${row.id ? 'application-row application-row-clickable' : ''}"${row.id ? ` data-application-row="${row.id}"` : ''}>
+          ${columns
+            .map((column) => {
+              const value =
+                column.key === 'period'
+                  ? formatTablePeriodValue(row[column.key])
+                  : column.key === 'hours' && selectedMenu === '문화활동 신청'
+                    ? '-'
+                    : (row[column.key] ?? '-')
+
+              const content =
+                column.key === 'courseName'
+                  ? `<span class="table-cell-text table-cell-text-course">${value}</span>`
+                  : column.key === 'approvalStatus'
+                    ? renderApprovalStatusCell(value)
+                  : column.key === 'place'
+                    ? `<span class="table-cell-text table-cell-text-place">${value}</span>`
+                    : value
+
+              return `<td>${content}</td>`
+            })
+            .join('')}
         </tr>
       `,
     )
@@ -3212,6 +3664,7 @@ function renderApplicationFilterActions() {
   }
 
   const shouldShowWrite = state.application.selectedMenu !== '사외교육 신청'
+  actionNode.classList.toggle('is-single-wide', !shouldShowWrite)
 
   actionNode.innerHTML = `
     <button type="button" class="ghost-button" data-search-button="application">
@@ -3288,11 +3741,7 @@ function getApplicationDetailDraft(menu = state.application.selectedMenu) {
   }
 
   if (!state.application.detailDrafts[menu]) {
-    const expectedCostField = (config.fields.cost || []).find((field) => field.label === '예상 비용')
-    state.application.detailDrafts[menu] = {
-      expectedCost: String(expectedCostField?.primaryValue || '').replace(/[^\d]/g, ''),
-      dateRanges: {},
-    }
+    state.application.detailDrafts[menu] = createApplicationDetailDraft(config)
   }
 
   return state.application.detailDrafts[menu]
@@ -3305,11 +3754,7 @@ function resetApplicationDetailDraft(menu = state.application.selectedMenu) {
     return null
   }
 
-  const expectedCostField = (config.fields.cost || []).find((field) => field.label === '예상 비용')
-  state.application.detailDrafts[menu] = {
-    expectedCost: String(expectedCostField?.primaryValue || '').replace(/[^\d]/g, ''),
-    dateRanges: {},
-  }
+  state.application.detailDrafts[menu] = createApplicationDetailDraft(config)
 
   return state.application.detailDrafts[menu]
 }
@@ -3355,12 +3800,176 @@ function resetApplicationView() {
   renderApplicationDetail(state.application.selectedMenu)
 }
 
+function navigateToApplicationDetail(type, rowId, { replaceHistory = false } = {}) {
+  const menu = applicationTypeToMenuMap[type]
+  const row = (applicationRowsByMenu[menu] || []).find((item) => item.id === rowId)
+
+  if (!menu || !row) {
+    return false
+  }
+
+  closeDatePicker()
+  state.currentView = '교육신청'
+  state.application.selectedMenu = menu
+  state.application.isDetailOpen = false
+  state.application.selectedRowId = null
+  state.application.courseName = ''
+  state.application.year = row.year || '2026'
+  state.application.appliedFilters = {
+    courseName: '',
+    year: state.application.year,
+  }
+  state.application.detailDrafts = {}
+
+  const titleNode = document.querySelector('[data-filter-title="application"]')
+  const courseInput = document.querySelector('[data-course-input="application"]')
+  const yearInput = document.querySelector('[data-year-input="application"]')
+
+  if (titleNode) {
+    titleNode.textContent = menu
+  }
+
+  if (courseInput) {
+    courseInput.value = ''
+  }
+
+  if (yearInput) {
+    yearInput.value = state.application.year
+    const yearSelect = yearInput.closest('[data-custom-select]')
+    const yearOption = yearSelect?.querySelector(`.custom-select-option[data-value="${state.application.year}"]`)
+
+    if (yearSelect && yearOption) {
+      selectCustomOption(yearSelect, yearOption, { shouldClose: false })
+    }
+  }
+
+  showView('교육신청')
+  setActiveTab('교육신청')
+  elements.transition.classList.remove('is-hidden')
+  elements.transition.classList.add('is-visible')
+
+  syncMenuButtons('application', menu)
+  renderApplicationFilterActions()
+  renderApplicationTable()
+  openApplicationDetail(menu, { rowId: row.id, updateRoute: true, replaceHistory })
+
+  return true
+}
+
 function getApplicationExpectedCostRaw(menu = state.application.selectedMenu) {
   return getApplicationDetailDraft(menu)?.expectedCost || ''
 }
 
 function getApplicationExpectedCostDisplay(menu = state.application.selectedMenu) {
   return formatCurrencyWithUnit(getApplicationExpectedCostRaw(menu))
+}
+
+function createApplicationDetailDraft(config = {}) {
+  const expectedCostField = (config.fields?.cost || []).find((field) => field.label === '예상 비용')
+
+  return {
+    expectedCost: expectedCostField
+      ? String(expectedCostField.primaryValue || '').replace(/[^\d]/g, '')
+      : '',
+    dateRanges: {},
+  }
+}
+
+function createApplicationDetailDraftFromRow(menu, row) {
+  const draft = createApplicationDetailDraft(applicationDetailConfigs[menu])
+  const detailData = row?.detailData || {}
+
+  if (detailData.cost?.expectedCost) {
+    draft.expectedCost = String(detailData.cost.expectedCost).replace(/[^\d]/g, '')
+  }
+
+  if (detailData.basic?.periodStart || detailData.basic?.periodEnd) {
+    draft.dateRanges.기간 = {
+      start: detailData.basic.periodStart || '',
+      end: detailData.basic.periodEnd || '',
+    }
+  }
+
+  return draft
+}
+
+function renderSummaryValueMarkup(value = '') {
+  const normalized = String(value || '').trim()
+  const currencyMatch = normalized.match(/^([\d,]+)(원)$/)
+
+  if (currencyMatch) {
+    return `
+      <span class="detail-summary-amount">${currencyMatch[1]}</span>
+      <span class="detail-summary-unit">${currencyMatch[2]}</span>
+    `
+  }
+
+  return `<span class="detail-summary-amount">${normalized || '0'}</span>`
+}
+
+function renderSummaryCards(items = [], resolveValue) {
+  return items
+    .map((item) => {
+      const value = typeof resolveValue === 'function' ? resolveValue(item) : item.value
+
+      return `
+        <article class="detail-summary-card${item.tone ? ` is-${item.tone}` : ''}">
+          <p class="detail-summary-label">${item.label}</p>
+          <p class="detail-summary-value"${
+            item.label === '예상 비용' ? ' data-application-expected-cost-summary' : ''
+          }>${renderSummaryValueMarkup(value)}</p>
+          <p class="detail-summary-caption">${item.caption}</p>
+        </article>
+      `
+    })
+    .join('')
+}
+
+function renderApplicationBudgetSummary(menu, budgetSummary = []) {
+  if (!budgetSummary.length) {
+    return ''
+  }
+
+  return `
+    <section class="detail-summary-grid" data-application-budget-summary>
+      ${renderSummaryCards(
+        budgetSummary,
+        (item) => (item.label === '예상 비용' ? getApplicationExpectedCostDisplay(menu) : item.value),
+      )}
+    </section>
+  `
+}
+
+function renderApplicationDetailSections(menu, config, detailFields) {
+  const sections = config.sections || []
+
+  return sections
+    .map((section) => {
+      const fields = detailFields[section.key] || []
+
+      if (!fields.length) {
+        return ''
+      }
+
+      const summaryMarkup =
+        section.key === 'cost'
+          ? renderApplicationBudgetSummary(menu, config.budgetSummary || [])
+          : ''
+
+      return `
+        <section class="card detail-section-card">
+          <div class="detail-section-head">
+            <h3>${section.title}</h3>
+            <p>${section.description}</p>
+          </div>
+          <div class="detail-form-grid" data-application-detail-fields="${section.key}">
+            ${fields.map((field) => renderApplicationDetailField(field)).join('')}
+          </div>
+        </section>
+        ${summaryMarkup}
+      `
+    })
+    .join('')
 }
 
 function renderDetailFieldLabel(label, { srOnly = false } = {}) {
@@ -3627,7 +4236,7 @@ function renderApplicationDetail(menu = state.application.selectedMenu) {
   }
 
   const titleNode = document.querySelector('[data-application-detail-title]')
-  const summaryNode = document.querySelector('[data-application-budget-summary]')
+  const sectionsNode = document.querySelector('[data-application-detail-sections]')
   const noticeNode = document.querySelector('[data-application-notices]')
 
   if (titleNode) {
@@ -3638,27 +4247,60 @@ function renderApplicationDetail(menu = state.application.selectedMenu) {
   const detailFields = structuredClone(config.fields)
   const detailDraft = getApplicationDetailDraft(menu)
 
-  if (selectedRow && menu === '사외교육 신청') {
+  if (selectedRow) {
     detailFields.basic = detailFields.basic.map((field) => {
       if (field.label === '제목') {
-        return { ...field, value: selectedRow.courseName }
+        return { ...field, value: selectedRow.detailData?.basic?.title || selectedRow.courseName }
       }
 
       if (field.label === '장소') {
-        return { ...field, value: selectedRow.place }
+        return { ...field, value: selectedRow.detailData?.basic?.place || selectedRow.place }
+      }
+
+      if (field.label === '적용년도') {
+        return { ...field, value: selectedRow.detailData?.basic?.year || `${selectedRow.year}년` }
+      }
+
+      if (field.label === '내용') {
+        return { ...field, value: selectedRow.detailData?.basic?.purpose || field.value }
       }
 
       if (field.label === '교육시간') {
-        return { ...field, value: selectedRow.hours }
+        return { ...field, value: selectedRow.detailData?.basic?.hours || selectedRow.hours }
       }
 
       if (field.label === '기간') {
         const [start, end] = String(selectedRow.period || '').split(' - ')
         return {
           ...field,
-          start: start?.replaceAll('.', '-') || field.start,
-          end: end?.replaceAll('.', '-') || field.end,
+          start:
+            selectedRow.detailData?.basic?.periodStart ||
+            start?.replaceAll('.', '-') ||
+            field.start,
+          end:
+            selectedRow.detailData?.basic?.periodEnd ||
+            end?.replaceAll('.', '-') ||
+            field.end,
         }
+      }
+
+      return field
+    })
+
+    detailFields.cost = (detailFields.cost || []).map((field) => {
+      if (field.label === '예상 비용') {
+        return {
+          ...field,
+          primaryValue: selectedRow.detailData?.cost?.expectedCost || field.primaryValue,
+        }
+      }
+
+      return field
+    })
+
+    detailFields.extra = (detailFields.extra || []).map((field) => {
+      if (field.label === '비고') {
+        return { ...field, value: selectedRow.detailData?.extra?.note || field.value }
       }
 
       return field
@@ -3683,29 +4325,9 @@ function renderApplicationDetail(menu = state.application.selectedMenu) {
     }
   })
 
-  if (summaryNode) {
-    summaryNode.innerHTML = config.budgetSummary
-      .map(
-        (item) => `
-          <article class="detail-summary-card${item.tone ? ` is-${item.tone}` : ''}">
-            <p class="detail-summary-label">${item.label}</p>
-            <p class="detail-summary-value"${item.label === '예상 비용' ? ' data-application-expected-cost-summary' : ''}>${item.label === '예상 비용' ? getApplicationExpectedCostDisplay(menu) : item.value}</p>
-            <p class="detail-summary-caption">${item.caption}</p>
-          </article>
-        `,
-      )
-      .join('')
+  if (sectionsNode) {
+    sectionsNode.innerHTML = renderApplicationDetailSections(menu, config, detailFields)
   }
-
-  ;['basic', 'cost', 'extra'].forEach((sectionKey) => {
-    const target = document.querySelector(`[data-application-detail-fields="${sectionKey}"]`)
-
-    if (target) {
-      target.innerHTML = (detailFields[sectionKey] || [])
-        .map((field) => renderApplicationDetailField(field))
-        .join('')
-    }
-  })
 
   if (noticeNode) {
     noticeNode.innerHTML = renderNoticeCards(config.notices)
@@ -3727,14 +4349,23 @@ function syncApplicationDetailView() {
   detailView.classList.toggle('is-hidden', !state.application.isDetailOpen)
 }
 
-function openApplicationDetail(menu = state.application.selectedMenu) {
+function openApplicationDetail(menu = state.application.selectedMenu, { rowId = null, updateRoute = true, replaceHistory = false } = {}) {
   state.application.selectedMenu = menu
   state.application.isDetailOpen = true
-  state.application.selectedRowId = null
-  resetApplicationDetailDraft(menu)
+  state.application.selectedRowId = rowId
+
+  const selectedRow = rowId ? getApplicationSelectedRow(menu, rowId) : null
+  state.application.detailDrafts[menu] = selectedRow
+    ? createApplicationDetailDraftFromRow(menu, selectedRow)
+    : createApplicationDetailDraft(applicationDetailConfigs[menu])
+
   renderApplicationDetail(menu)
   syncMenuButtons('application', menu)
   syncApplicationDetailView()
+
+  if (updateRoute) {
+    updateBrowserPath(getApplicationDetailPath(selectedRow?.type, rowId), { replace: replaceHistory })
+  }
 }
 
 function closeApplicationDetail({ resetDraft = false } = {}) {
@@ -3745,10 +4376,24 @@ function closeApplicationDetail({ resetDraft = false } = {}) {
   state.application.isDetailOpen = false
   state.application.selectedRowId = null
   syncApplicationDetailView()
+
+  if (state.currentView === '교육신청') {
+    updateBrowserPath(viewPathMap.교육신청)
+  }
 }
 
 function getReportRows(menu = state.report.selectedMenu) {
   return reportRowsByMenu[menu] || []
+}
+
+function getReportRowByTypeAndId(type, rowId) {
+  const menu = reportTypeToMenuMap[type]
+
+  if (!menu) {
+    return null
+  }
+
+  return getReportRows(menu).find((row) => row.id === rowId) || null
 }
 
 function getReportSelectedRow(menu = state.report.selectedMenu, rowId = state.report.selectedRowId) {
@@ -3799,35 +4444,256 @@ function renderReportDetailField(field, sectionKey = '') {
 }
 
 function renderReportUploadList(items = []) {
-  const target = document.querySelector('[data-report-upload-list]')
+  const target = document.querySelector('[data-report-upload-panel]')
 
   if (!target) {
     return
   }
 
-  if (!items.length) {
+  const policy = getReportUploadPolicy(state.report.selectedMenu)
+  const errorMarkup = `
+    <p class="field-help report-upload-error${state.report.uploadError ? '' : ' is-hidden'}" data-report-upload-error>${state.report.uploadError || ''}</p>
+  `
+  const renderUploadRow = (label, uploadedFile = null, slotKey = '') => `
+    <div class="report-upload-slot is-inline${uploadedFile ? ' is-filled' : ''}">
+      <div class="report-upload-slot-left">
+        <p class="report-upload-slot-title">${label}${slotKey ? ' <span class="report-upload-required">*</span>' : ''}</p>
+      </div>
+      <div class="report-upload-slot-middle${uploadedFile ? ' is-filled' : ' is-empty'}">
+        ${
+          uploadedFile
+            ? `
+              <div class="report-upload-meta">
+                <span class="report-upload-success" aria-hidden="true">
+                  <span class="report-upload-success-icon"></span>
+                </span>
+                <span class="report-upload-name">${uploadedFile.name}</span>
+                <span class="report-upload-size">(${uploadedFile.size})</span>
+              </div>
+            `
+            : `
+              <div class="report-upload-meta is-empty">
+                <span class="report-upload-empty">파일을 선택해주세요.</span>
+              </div>
+            `
+        }
+      </div>
+      <div class="report-upload-slot-right">
+        ${
+          uploadedFile
+            ? `<button type="button" class="report-upload-action-button report-upload-action-button-danger report-upload-remove" data-report-upload-remove="${uploadedFile.id}">삭제</button>`
+            : `
+              <label class="report-upload-action-button report-upload-action-button-primary report-upload-select">
+                <input
+                  type="file"
+                  ${slotKey ? `data-report-upload-slot="${slotKey}"` : ''}
+                  accept=".pdf,.doc,.docx,.hwp"
+                  ${slotKey ? 'data-report-upload-input' : 'multiple data-report-upload-input'}
+                />
+                <span>파일 선택</span>
+              </label>
+            `
+        }
+      </div>
+    </div>
+  `
+
+  if ((policy.requiredSlots || []).length) {
+    const getSlotFile = (slot) =>
+      items.find((item) => item.slot === slot) ||
+      (((policy.requiredSlots || []).length === 1 && items[0]) || null)
+
     target.innerHTML = `
-      <div class="field-help">첨부된 파일이 없습니다.</div>
+      ${errorMarkup}
+      <div class="report-upload-list is-slots">
+        ${(policy.requiredSlots || [])
+          .map((slot) => {
+            const uploadedFile = getSlotFile(slot.key)
+            return renderUploadRow(slot.label, uploadedFile, slot.key)
+          })
+          .join('')}
+      </div>
     `
+
+    renderIcons()
     return
   }
 
-  target.innerHTML = items
-    .map(
-      (item) => `
-        <div class="report-upload-item">
-          <div class="report-upload-meta">
-            <span class="icon-box small" data-icon="file"></span>
-            <span class="report-upload-name">${item.name}</span>
-            <span class="report-upload-size">${item.size}</span>
-          </div>
-          <button type="button" class="danger-secondary-button report-upload-remove" data-report-upload-remove="${item.id}">삭제</button>
-        </div>
-      `,
-    )
-    .join('')
+  if (policy.layout === 'compact-list') {
+    const uploadedFile = items[0] || null
+
+    target.innerHTML = `
+      ${errorMarkup}
+      <div class="report-upload-list is-slots is-single">
+        ${renderUploadRow('결과보고서', uploadedFile)}
+      </div>
+    `
+
+    renderIcons()
+    return
+  }
+
+  target.innerHTML = `
+    <label class="report-upload-dropzone" data-report-upload-dropzone>
+      <input type="file" multiple accept=".pdf,.doc,.docx,.hwp" data-report-upload-input />
+      <span class="icon-box" data-icon="file"></span>
+      <strong data-report-upload-copy>${policy.copy}</strong>
+      <span data-report-upload-format>${policy.format}</span>
+    </label>
+    ${errorMarkup}
+    <div class="report-upload-list" data-report-upload-list>
+      ${
+        items.length
+          ? items
+              .map(
+                (item) => `
+                  <div class="report-upload-item">
+                    <div class="report-upload-meta">
+                      <span class="icon-box small" data-icon="file"></span>
+                      <span class="report-upload-name">${item.name}</span>
+                      <span class="report-upload-size">${item.size}</span>
+                    </div>
+                    <button type="button" class="danger-secondary-button report-upload-remove" data-report-upload-remove="${item.id}">삭제</button>
+                  </div>
+                `,
+              )
+              .join('')
+          : '<div class="field-help">첨부된 파일이 없습니다.</div>'
+      }
+    </div>
+  `
 
   renderIcons()
+}
+
+function setReportUploadError(message = '') {
+  state.report.uploadError = message
+  const errorNode = document.querySelector('[data-report-upload-error]')
+
+  if (!errorNode) {
+    return
+  }
+
+  errorNode.textContent = message
+  errorNode.classList.toggle('is-hidden', !message)
+}
+
+function getReportUploadPolicy(menu = state.report.selectedMenu) {
+  if (menu === '교육활동 결과보고') {
+    return {
+      title: '첨부 파일',
+      description: '결과보고서와 교육 커리큘럼 파일을 첨부해주세요.',
+      copy: '결과보고서 및 교육 커리큘럼을 드래그하거나 클릭하여 업로드',
+      format: 'pdf, doc, docx, hwp / 최대 10MB',
+      policy: '※ 결과보고서와 교육 커리큘럼 파일은 모두 첨부해주세요.',
+      minRequiredFiles: 2,
+      requiredSlots: [
+        { key: 'report', label: '결과보고서' },
+        { key: 'curriculum', label: '교육 커리큘럼' },
+      ],
+    }
+  }
+
+  if (menu === '문화활동 결과보고') {
+    return {
+      title: '첨부 파일',
+      description: '결과보고서를 첨부해주세요.',
+      copy: '결과보고서를 드래그하거나 클릭하여 업로드',
+      format: 'pdf, doc, docx, hwp / 최대 10MB',
+      policy: '※ 결과보고서 파일만 업로드 가능합니다.',
+      minRequiredFiles: 1,
+      requiredSlots: [{ key: 'report', label: '결과보고서' }],
+    }
+  }
+
+  if (menu === '사외교육 결과보고') {
+    return {
+      title: '첨부 파일',
+      description: '결과보고서와 교육 커리큘럼 파일을 첨부해주세요.',
+      copy: '결과보고서 및 교육 커리큘럼을 드래그하거나 클릭하여 업로드',
+      format: 'pdf, doc, docx, hwp / 최대 10MB',
+      policy: '※ 결과보고서와 교육 커리큘럼 파일은 모두 첨부해주세요.',
+      minRequiredFiles: 2,
+      requiredSlots: [
+        { key: 'report', label: '결과보고서' },
+        { key: 'curriculum', label: '교육 커리큘럼' },
+      ],
+    }
+  }
+
+  return {
+    title: '첨부 파일',
+    description: '결과보고 확인에 필요한 파일을 첨부해주세요.',
+    copy: '결과보고서를 드래그하거나 클릭하여 업로드',
+    format: 'pdf, doc, docx, hwp / 최대 10MB',
+    policy: '※ 결과보고서 파일만 업로드 가능합니다.',
+    minRequiredFiles: 1,
+    layout: 'default',
+  }
+}
+
+function syncReportUploadPolicy(menu = state.report.selectedMenu) {
+  const policy = getReportUploadPolicy(menu)
+  const titleNode = document.querySelector('[data-report-upload-title]')
+  const descriptionNode = document.querySelector('[data-report-upload-description]')
+  const copyNode = document.querySelector('[data-report-upload-copy]')
+  const formatNode = document.querySelector('[data-report-upload-format]')
+  const policyNode = document.querySelector('[data-report-upload-policy]')
+
+  if (titleNode) {
+    titleNode.textContent = policy.title
+  }
+
+  if (descriptionNode) {
+    descriptionNode.textContent = policy.description
+  }
+
+  if (copyNode) {
+    copyNode.textContent = policy.copy
+  }
+
+  if (formatNode) {
+    formatNode.textContent = policy.format
+  }
+
+  if (policyNode) {
+    policyNode.textContent = policy.policy
+  }
+}
+
+function parsePeriodToDateRange(period = '', fallbackStart = '', fallbackEnd = '') {
+  const [start, end] = String(period || '').split(' - ')
+
+  return {
+    start: start?.replaceAll('.', '-') || fallbackStart,
+    end: end?.replaceAll('.', '-') || fallbackEnd,
+  }
+}
+
+function syncReportFilterControls(menu = state.report.selectedMenu, year = state.report.year) {
+  const titleNode = document.querySelector('[data-filter-title="report"]')
+  const courseInput = document.querySelector('[data-course-input="report"]')
+  const yearInput = document.querySelector('[data-year-input="report"]')
+
+  if (titleNode) {
+    titleNode.textContent = menu
+  }
+
+  if (courseInput) {
+    courseInput.value = state.report.courseName
+  }
+
+  if (yearInput) {
+    yearInput.value = year
+    const yearSelect = yearInput.closest('[data-custom-select]')
+    const yearOption = yearSelect?.querySelector(`.custom-select-option[data-value="${year}"]`)
+
+    if (yearSelect && yearOption) {
+      selectCustomOption(yearSelect, yearOption, { shouldClose: false })
+    }
+  }
+
+  syncMenuButtons('report', menu)
 }
 
 function syncReportCostDraft() {
@@ -3850,6 +4716,15 @@ function syncReportCostDraft() {
   }
 }
 
+function syncReportSaveButtonState() {
+  const saveButton = document.querySelector('[data-report-detail-action="save"]')
+
+  if (!saveButton) {
+    return
+  }
+  saveButton.disabled = false
+}
+
 function renderReportCostSummary() {
   const costNode = document.querySelector('[data-report-cost-summary]')
 
@@ -3857,17 +4732,7 @@ function renderReportCostSummary() {
     return
   }
 
-  costNode.innerHTML = (state.report.detailDraft.cost || [])
-    .map(
-      (item) => `
-        <article class="detail-summary-card${item.tone ? ` is-${item.tone}` : ''}">
-          <p class="detail-summary-label">${item.label}</p>
-          <p class="detail-summary-value">${item.value}</p>
-          <p class="detail-summary-caption">${item.caption}</p>
-        </article>
-      `,
-    )
-    .join('')
+  costNode.innerHTML = renderSummaryCards(state.report.detailDraft.cost || [])
 }
 
 function renderReportDetail() {
@@ -3886,15 +4751,21 @@ function renderReportDetail() {
       ...config.rowToDetail(row),
     }
   }
+  state.report.uploadError = ''
 
   const draft = state.report.detailDraft
   const titleNode = document.querySelector('[data-report-detail-title]')
   const requestAmountNode = document.querySelector('[data-report-request-amount-field]')
   const costNode = document.querySelector('[data-report-cost-summary]')
   const noticeNode = document.querySelector('[data-report-notices]')
+  const educationDescriptionNode = document.querySelector('[data-report-education-description]')
 
   if (titleNode) {
     titleNode.textContent = menu
+  }
+
+  if (educationDescriptionNode) {
+    educationDescriptionNode.textContent = config.educationDescription || '교육기간, 시간, 만족도 평가를 입력합니다.'
   }
 
   ;['basic', 'education', 'account'].forEach((sectionKey) => {
@@ -3903,7 +4774,7 @@ function renderReportDetail() {
     if (target) {
       target.classList.toggle(
         'is-report-education-layout',
-        menu === '교육활동 결과보고' && sectionKey === 'education',
+        (menu === '교육활동 결과보고' || menu === '사외교육 결과보고') && sectionKey === 'education',
       )
       target.innerHTML = (draft[sectionKey] || [])
         .map((field) => renderReportDetailField(field, sectionKey))
@@ -3933,7 +4804,10 @@ function renderReportDetail() {
 
   renderReportCostSummary()
 
+  syncReportUploadPolicy(menu)
+  setReportUploadError('')
   renderReportUploadList(draft.uploads || [])
+  syncReportSaveButtonState()
 
   if (noticeNode) {
     noticeNode.innerHTML = renderReportNoticeCards(config.notices, {
@@ -3957,19 +4831,27 @@ function syncReportDetailView() {
   detailView.classList.toggle('is-hidden', !state.report.isDetailOpen)
 }
 
-function openReportDetail(rowId) {
+function openReportDetail(rowId, { updateRoute = true, replaceHistory = false } = {}) {
   state.report.selectedRowId = rowId
   state.report.isDetailOpen = true
   state.report.detailDraft = null
   renderReportDetail()
   syncReportDetailView()
+
+  if (updateRoute) {
+    updateBrowserPath(getReportDetailPath(getReportTypeByMenu(), rowId), { replace: replaceHistory })
+  }
 }
 
-function closeReportDetail() {
+function closeReportDetail({ updateRoute = true, replaceHistory = false } = {}) {
   state.report.isDetailOpen = false
   state.report.selectedRowId = null
   state.report.detailDraft = null
   syncReportDetailView()
+
+  if (updateRoute && state.currentView === '결과보고') {
+    updateBrowserPath(viewPathMap.결과보고, { replace: replaceHistory })
+  }
 }
 
 function openConfirmModal(onConfirm) {
@@ -3996,6 +4878,41 @@ function closeConfirmModal() {
   confirmCancelHandler = null
   modal.classList.add('is-hidden')
   modal.setAttribute('aria-hidden', 'true')
+}
+
+function openNoticeModal(message, title = '안내') {
+  const modal = document.querySelector('[data-notice-modal]')
+  const titleNode = modal?.querySelector('#notice-modal-title')
+  const descriptionNode = modal?.querySelector('#notice-modal-description')
+  const closeButton = modal?.querySelector('[data-notice-close]')
+
+  if (!modal || !titleNode || !descriptionNode || !closeButton) {
+    return
+  }
+
+  noticeModalTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null
+  titleNode.textContent = title
+  descriptionNode.textContent = message
+  modal.classList.remove('is-hidden')
+  modal.setAttribute('aria-hidden', 'false')
+  closeButton.focus()
+}
+
+function closeNoticeModal() {
+  const modal = document.querySelector('[data-notice-modal]')
+
+  if (!modal) {
+    return
+  }
+
+  modal.classList.add('is-hidden')
+  modal.setAttribute('aria-hidden', 'true')
+
+  if (noticeModalTrigger instanceof HTMLElement) {
+    noticeModalTrigger.focus()
+  }
+
+  noticeModalTrigger = null
 }
 
 function bindConfirmModalEvents() {
@@ -4027,6 +4944,28 @@ function bindConfirmModalEvents() {
   })
 }
 
+function bindNoticeModalEvents() {
+  const modal = document.querySelector('[data-notice-modal]')
+
+  if (!modal || modal.dataset.bound === 'true') {
+    return
+  }
+
+  modal.dataset.bound = 'true'
+
+  modal.addEventListener('click', (event) => {
+    if (event.target.closest('[data-notice-close]')) {
+      closeNoticeModal()
+    }
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.classList.contains('is-hidden')) {
+      closeNoticeModal()
+    }
+  })
+}
+
 function validateReportDetailDraft() {
   const accountFields = state.report.detailDraft?.account || []
   const educationFields = state.report.detailDraft?.education || []
@@ -4034,8 +4973,34 @@ function validateReportDetailDraft() {
   const hasEducationPlace = educationFields
     .filter((field) => field.key === 'educationPlace')
     .every((field) => String(field.value || '').trim() !== '')
+  const policy = getReportUploadPolicy(state.report.selectedMenu)
+  const uploads = state.report.detailDraft?.uploads || []
+  const hasRequiredUploads = (policy.requiredSlots || []).length
+    ? policy.requiredSlots.every((slot) => uploads.some((item) => item.slot === slot.key))
+    : uploads.length >= policy.minRequiredFiles
 
-  return hasValidAccountFields && hasEducationPlace
+  if (!hasValidAccountFields || !hasEducationPlace) {
+    return {
+      isValid: false,
+      message: '교육장소, 은행, 계좌번호, 예금주를 모두 입력해주세요.',
+    }
+  }
+
+  if (!hasRequiredUploads) {
+    return {
+      isValid: false,
+      message:
+        state.report.selectedMenu === '교육활동 결과보고' ||
+        state.report.selectedMenu === '사외교육 결과보고'
+          ? '결과보고서와 교육 커리큘럼을 모두 업로드 해주세요.'
+          : '결과보고서 파일을 업로드해야 저장할 수 있습니다.',
+    }
+  }
+
+  return {
+    isValid: true,
+    message: '',
+  }
 }
 
 function resetReportView() {
@@ -4043,47 +5008,61 @@ function resetReportView() {
   state.report.isDetailOpen = false
   state.report.selectedRowId = null
   state.report.detailDraft = null
+  state.report.uploadError = ''
   state.report.courseName = ''
   state.report.year = '2026'
   state.report.appliedFilters = {
     courseName: '',
     year: '2026',
   }
-
-  const titleNode = document.querySelector('[data-filter-title="report"]')
-  const courseInput = document.querySelector('[data-course-input="report"]')
-  const yearInput = document.querySelector('[data-year-input="report"]')
-
-  if (titleNode) {
-    titleNode.textContent = '교육활동 결과보고'
-  }
-
-  if (courseInput) {
-    courseInput.value = ''
-  }
-
-  if (yearInput) {
-    yearInput.value = '2026'
-    const yearSelect = yearInput.closest('[data-custom-select]')
-    const yearOption = yearSelect?.querySelector('.custom-select-option[data-value="2026"]')
-
-    if (yearSelect && yearOption) {
-      selectCustomOption(yearSelect, yearOption, { shouldClose: false })
-    }
-  }
-
-  syncMenuButtons('report', state.report.selectedMenu)
+  syncReportFilterControls(state.report.selectedMenu, state.report.year)
   renderReportTable()
   syncReportDetailView()
 }
 
+function navigateToReportDetail(type, rowId, { replaceHistory = false } = {}) {
+  const menu = reportTypeToMenuMap[type]
+  const row = getReportRowByTypeAndId(type, rowId)
+
+  if (!menu || !row) {
+    return false
+  }
+
+  closeDatePicker()
+  state.currentView = '결과보고'
+  state.report.selectedMenu = menu
+  state.report.isDetailOpen = false
+  state.report.selectedRowId = null
+  state.report.detailDraft = null
+  state.report.courseName = ''
+  state.report.year = row.year || '2026'
+  state.report.appliedFilters = {
+    courseName: '',
+    year: state.report.year,
+  }
+
+  showView('결과보고')
+  setActiveTab('결과보고')
+  elements.transition.classList.remove('is-hidden')
+  elements.transition.classList.add('is-visible')
+
+  syncReportFilterControls(menu, state.report.year)
+  renderReportTable()
+  openReportDetail(row.id, { updateRoute: true, replaceHistory })
+
+  return true
+}
+
 function renderReportTable() {
   const target = document.querySelector('[data-table-body="report"]')
+  const table = document.querySelector('[data-report-table]')
+  const head = document.querySelector('[data-report-table-head]')
   if (!target) {
     return
   }
 
   const { selectedMenu, appliedFilters } = state.report
+  const columns = getReportTableColumns(selectedMenu)
   const rows = (reportRowsByMenu[selectedMenu] || []).filter((row) => {
     const matchesYear = row.year === appliedFilters.year
     const matchesCourse = row.courseName
@@ -4092,8 +5071,16 @@ function renderReportTable() {
     return matchesYear && matchesCourse
   })
 
+  if (head) {
+    head.innerHTML = `
+      <tr>
+        ${columns.map((column) => `<th class="${column.className}">${column.label}</th>`).join('')}
+      </tr>
+    `
+  }
+
   if (!rows.length) {
-    target.innerHTML = renderEmptyRow(7, appliedFilters.year, selectedMenu)
+    target.innerHTML = renderEmptyRow(columns.length, appliedFilters.year, selectedMenu)
     renderIcons()
     return
   }
@@ -4102,13 +5089,27 @@ function renderReportTable() {
     .map(
       (row) => `
         <tr class="report-row" data-report-row="${row.id}">
-          <td>${row.year}</td>
-          <td>${row.courseName}</td>
-          <td>${row.period}</td>
-          <td>${row.hours}</td>
-          <td>${row.place}</td>
-          <td>${row.approvalStatus}</td>
-          <td>${row.completionStatus}</td>
+          ${columns
+            .map((column) => {
+              const value =
+                column.key === 'period'
+                  ? formatTablePeriodValue(row[column.key])
+                  : column.key === 'hours' && selectedMenu === '문화활동 결과보고'
+                    ? '-'
+                    : (row[column.key] || '-')
+
+              const content =
+                column.key === 'courseName'
+                  ? `<span class="table-cell-text table-cell-text-course">${value}</span>`
+                  : column.key === 'approvalStatus'
+                    ? renderApprovalStatusCell(value)
+                  : column.key === 'place'
+                    ? `<span class="table-cell-text table-cell-text-place">${value}</span>`
+                    : value
+
+              return `<td>${content}</td>`
+            })
+            .join('')}
         </tr>
       `,
     )
@@ -4132,6 +5133,23 @@ function filterEducationStatusRows() {
   })
 }
 
+function formatEducationStatusPaidAmount(row = {}) {
+  const amount = row.paidAmount ?? row.approvedAmount
+  const normalized = String(amount ?? '').replace(/[^\d]/g, '')
+
+  if (!normalized) {
+    return '-'
+  }
+
+  return formatCurrencyWithUnit(normalized)
+}
+
+function formatEducationStatusHours(value = '') {
+  const normalized = String(value || '').trim()
+
+  return normalized === '0시간' ? '-' : (normalized || '-')
+}
+
 function renderEducationStatusTable() {
   const target = document.querySelector('[data-table-body="education-status"]')
   if (!target) {
@@ -4139,6 +5157,7 @@ function renderEducationStatusTable() {
   }
 
   const rows = filterEducationStatusRows()
+  const isCultureStatus = state.educationStatus.selectedMenu === '문화활동 현황'
 
   if (!rows.length) {
     target.innerHTML = renderEducationStatusEmptyRow()
@@ -4151,11 +5170,12 @@ function renderEducationStatusTable() {
       (row) => `
         <tr>
           <td>${row.year}</td>
-          <td>${row.courseName}</td>
-          <td>${row.period}</td>
-          <td>${row.hours}</td>
-          <td>${row.credit}</td>
+          <td><span class="table-cell-text table-cell-text-course">${row.courseName}</span></td>
+          <td>${formatTablePeriodValue(row.period)}</td>
+          <td>${isCultureStatus ? '-' : formatEducationStatusHours(row.hours)}</td>
+          <td>${isCultureStatus ? '-' : (row.credit || '-')}</td>
           <td>${row.completionStatus}</td>
+          <td class="align-right">${formatEducationStatusPaidAmount(row)}</td>
         </tr>
       `,
     )
@@ -4215,8 +5235,12 @@ function initializeFilterViews() {
         renderApplicationFilterActions()
         renderApplicationTable()
       } else if (group === 'report') {
-        closeReportDetail()
+        closeReportDetail({ updateRoute: state.currentView === '결과보고' })
         renderReportTable()
+
+        if (state.currentView === '결과보고') {
+          syncReportFilterControls(button.dataset.menu, state.report.year)
+        }
       } else if (group === 'adminBase') {
         resetAdminMenuState(button.dataset.menu)
         renderAdminBaseContent()
@@ -4298,12 +5322,17 @@ function bindApplicationDetailEvents() {
     applicationTableBody.addEventListener('click', (event) => {
       const row = event.target.closest('[data-application-row]')
 
-      if (!row || state.application.selectedMenu !== '사외교육 신청') {
+      if (!row) {
         return
       }
 
-      state.application.selectedRowId = row.dataset.applicationRow
-      openApplicationDetail('사외교육 신청')
+      const selectedRow = getApplicationSelectedRow(state.application.selectedMenu, row.dataset.applicationRow)
+
+      if (!selectedRow?.type) {
+        return
+      }
+
+      navigateToApplicationDetail(selectedRow.type, selectedRow.id)
     })
   }
 
@@ -4355,7 +5384,7 @@ function bindApplicationDetailEvents() {
       const summaryValue = detailView.querySelector('[data-application-expected-cost-summary]')
 
       if (summaryValue) {
-        summaryValue.textContent = formatCurrencyWithUnit(safeValue)
+        summaryValue.innerHTML = renderSummaryValueMarkup(formatCurrencyWithUnit(safeValue))
       }
     })
   }
@@ -4389,12 +5418,19 @@ function bindReportDetailEvents() {
 
     button.dataset.bound = 'true'
     button.addEventListener('click', () => {
-      if (
-        button.dataset.reportDetailAction === 'save' &&
-        !validateReportDetailDraft()
-      ) {
-        window.alert('교육장소, 은행, 계좌번호, 예금주를 모두 입력해주세요.')
-        return
+      if (button.dataset.reportDetailAction === 'save') {
+        const validationResult = validateReportDetailDraft()
+
+        if (!validationResult.isValid) {
+          if (validationResult.message.includes('업로드')) {
+            setReportUploadError(validationResult.message)
+          }
+
+          openNoticeModal(validationResult.message)
+          return
+        }
+
+        setReportUploadError('')
       }
 
       if (button.dataset.reportDetailAction === 'destructive-cancel') {
@@ -4427,6 +5463,7 @@ function bindReportDetailEvents() {
           (item) => item.id !== removeButton.dataset.reportUploadRemove,
         )
       renderReportUploadList(state.report.detailDraft.uploads)
+      syncReportSaveButtonState()
     })
 
     detailView.addEventListener('change', (event) => {
@@ -4436,14 +5473,49 @@ function bindReportDetailEvents() {
         return
       }
 
-      const files = Array.from(input.files || []).map((file, index) => ({
+      const allowedExtensions = new Set(['pdf', 'doc', 'docx', 'hwp'])
+      const maxFileSize = 10 * 1024 * 1024
+      const selectedFiles = Array.from(input.files || [])
+      const invalidFile = selectedFiles.find((file) => {
+        const extension = String(file.name || '').split('.').pop()?.toLowerCase() || ''
+
+        return !allowedExtensions.has(extension) || file.size > maxFileSize
+      })
+
+      if (invalidFile) {
+        const extension = String(invalidFile.name || '').split('.').pop()?.toLowerCase() || ''
+        const errorMessage =
+          invalidFile.size > maxFileSize
+            ? '10MB 이하의 결과보고서 파일만 업로드할 수 있습니다.'
+            : `.${extension || 'unknown'} 형식은 업로드할 수 없습니다. pdf, doc, docx, hwp 파일만 허용됩니다.`
+
+        setReportUploadError(errorMessage)
+        input.value = ''
+        return
+      }
+
+      setReportUploadError('')
+
+      const files = selectedFiles.map((file, index) => ({
         id: `report-upload-${Date.now()}-${index}`,
+        slot: input.dataset.reportUploadSlot || '',
         name: file.name,
         size: `${Math.max(1, Math.round(file.size / 1024))}KB`,
       }))
 
-      state.report.detailDraft.uploads = [...(state.report.detailDraft.uploads || []), ...files]
+      if (input.dataset.reportUploadSlot) {
+        state.report.detailDraft.uploads = [
+          ...(state.report.detailDraft.uploads || []).filter(
+            (item) => item.slot !== input.dataset.reportUploadSlot,
+          ),
+          files[0],
+        ]
+      } else {
+        state.report.detailDraft.uploads = [...(state.report.detailDraft.uploads || []), ...files]
+      }
+
       renderReportUploadList(state.report.detailDraft.uploads)
+      syncReportSaveButtonState()
       input.value = ''
     })
 
@@ -4837,6 +5909,7 @@ function initializeApp() {
   initializeStatusCards()
   initializeFilterViews()
   bindConfirmModalEvents()
+  bindNoticeModalEvents()
   bindApplicationDetailEvents()
   bindReportDetailEvents()
   bindEducationStatusEvents()
